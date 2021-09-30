@@ -39,6 +39,13 @@ def select_matches(elements, matchers: dict):
 
     return results, no_matches
 
+def has_any_containing(elements, contained_strings):
+    for element in elements:
+        for string in contained_strings:
+            if string in element:
+                return True
+    return False
+
 options = Options()
 options.headless = True
 browser = webdriver.Firefox(options=options)
@@ -68,7 +75,9 @@ out_file.flush()
 
 print("Fetching relevant sub-pages of wiki to look for links")
 for wiki_path in matches['wiki_update_links']:
-    browser.get(wiki_root + wiki_path)
+    is_version_update = "Version_Update" in wiki_path
+    current_wiki_page = wiki_root + wiki_path
+    browser.get(current_wiki_page)
     soup = BeautifulSoup(browser.page_source, 'html.parser')
     wiki_page_content = soup.find(class_=wiki_content_class)
     if wiki_page_content == None:
@@ -82,7 +91,10 @@ for wiki_path in matches['wiki_update_links']:
         'playonline': lambda link: 'playonline' in link,
     })
 
-    out_file.writelines([ link + '\n' for link in matches['playonline']])
+    if is_version_update and (len(matches['playonline']) == 0 or not has_any_containing(matches['playonline'], ["comnews", "update"])):
+        out_file.write(current_wiki_page + '\n')
+    else:
+        out_file.writelines([ link + '\n' for link in matches['playonline']])
     out_file.flush()
 
 print("Done!")

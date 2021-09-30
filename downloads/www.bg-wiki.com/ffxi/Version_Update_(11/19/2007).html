@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"bf3936c99e",applicationID:"31775399"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<title>Version Update (11/19/2007) - FFXI Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"7a005d2ec60778e4e8716852","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Version_Update_(11/19/2007)","wgTitle":"Version Update (11/19/2007)","wgCurRevisionId":376587,"wgRevisionId":376587,"wgArticleId":19012,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Update History"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Version_Update_(11/19/2007)","wgRelevantArticleId":19012,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":["sysop"],"wgRestrictionMove":["sysop"]};
+RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mediawiki.toc.styles":"ready","mediawiki.skinning.content.externallinks":"ready","skins.timeless":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.timeless.js","skins.timeless.mobile"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="../../../load.php@lang=en&amp;modules=mediawiki.skinning.content.externallinks%257Cmediawiki.toc.styles%257Cskins.timeless&amp;only=styles&amp;skin=timeless.css" />
+<script async="" src="../../../load.php@lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=timeless"></script>
+<!--[if IE]><link rel="stylesheet" href="/skins/Timeless/resources/IE9fixes.css?ffe73" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../load.php@lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=timeless.css" />
+<meta name="generator" content="MediaWiki 1.35.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0" />
+<link rel="shortcut icon" href="../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.bg-wiki.com/opensearch_desc.php" title="FFXI Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.bg-wiki.com/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="FFXI Wiki Atom feed" href="https://www.bg-wiki.com/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="2007).html" />
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"\/\/www.bg-wiki.com\/ffxi\/Version_Update_(11\/19\/2007)"},"author":{"@type":"Person","name":"Aquelia"},"headline":"Version Update (11\/19\/2007)","dateCreated":"2007-11-19T16:39:15-05:00","datePublished":"2007-11-19T16:39:15-05:00","dateModified":"2021-02-01T19:59:40-05:00","discussionUrl":"\/\/www.bg-wiki.com\/Talk:Version Update (11\/19\/2007)","image":{"@type":"ImageObject","url":"\/\/www.bg-wiki.com\/bgwiki.png","height":135,"width":135},"publisher":{"@type":"Organization","name":"FFXI Wiki","logo":{"@type":"ImageObject","url":"\/\/www.bg-wiki.com\/bgwiki.png"}},"description":"Version Update (11\/19\/2007)"}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","url":"\/\/www.bg-wiki.com","potentialAction":{"@type":"SearchAction","target":"\/\/www.bg-wiki.com\/index.php?search={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3274340-3"></script>
+<script>
+					  window.dataLayer = window.dataLayer || [];
+					  function gtag(){dataLayer.push(arguments);}
+					  gtag('js', new Date());
+					
+					  gtag('config', 'UA-3274340-3');
+					</script>
+<script type="text/javascript">
+					window['nitroAds'] = window['nitroAds'] || { createAd: function () { window.nitroAds.queue.push(["createAd", arguments]) }, queue: [] };
+					</script>
+<script async src="https://s.nitropay.com/ads-154.js"></script>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Version_Update_11_19_2007 rootpage-Version_Update_11_19_2007 skin-timeless action-view"><div id="mw-wrapper"><div id="mw-header-container" class="ts-container"><div id="mw-header" class="ts-inner"><div id="user-tools"><div id="personal"><h2><span>Anonymous</span></h2><div id="personal-inner" class="dropdown"><div role="navigation" class="mw-portlet" id="p-personal" aria-labelledby="p-personal-label"><h3 id="p-personal-label" lang="en" dir="ltr">Not logged in</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="pt-login"><a href="https://www.bg-wiki.com/index.php?title=Special:UserLogin&amp;returnto=Version+Update+(11%2F19%2F2007)" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o"><span>Log in</span></a></li></ul></div></div></div></div></div><div id="p-logo-text" class="mw-portlet" role="banner"><a id="p-banner" class="mw-wiki-title" href="https://www.bg-wiki.com/ffxi/Main_Page">FFXI Wiki</a></div><div class="mw-portlet" id="p-search"><h3 lang="en" dir="ltr"><label for="searchInput">Search</label></h3><form action="https://www.bg-wiki.com/index.php" id="searchform"><div id="simpleSearch"><div id="searchInput-container"><input type="search" name="search" placeholder="Search FFXI Wiki" title="Search FFXI Wiki [f]" accesskey="f" id="searchInput" /></div><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" /></div></form></div></div><div class="visualClear"></div></div><div id="mw-header-hack" class="color-bar"><div class="color-middle-container"><div class="color-middle"></div></div><div class="color-left"></div><div class="color-right"></div></div><div id="mw-header-nav-hack"><div class="color-bar"><div class="color-middle-container"><div class="color-middle"></div></div><div class="color-left"></div><div class="color-right"></div></div></div><div id="menus-cover"></div><div id="mw-content-container" class="ts-container"><div id="mw-content-block" class="ts-inner"><div id="mw-content-wrapper"><div id="mw-content"><div id="content" class="mw-body" role="main"><div style="text-align: center;">
+<div id="bgwiki-leaderboard"></div>
+<script type="text/javascript">
+				            window['nitroAds'].createAd('bgwiki-leaderboard', {
+				                "refreshLimit": 10,
+				                "refreshTime": 60,
+							    "renderVisibleOnly": true,
+   							    "refreshVisibleOnly": true,						      
+						        "mediaQuery": "(min-width: 748px)",
+				                "sizes": [
+				                    [
+				                        728,
+				                        90
+				                    ]
+				                ]
+				            });
+				        </script>
+</div><div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><div style="overflow:auto;">
+<table style="width: 100%; max-width: 1800px; min-width: 1300px; vertical-align: center; margin: auto;">
+<tbody><tr>
+<td style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: center; padding-left:1em; padding-right:1em; padding: 2px; text-align: center; font-weight: bold; width: 65%;"><img alt="Battle Content" src="../../../images/thumb/b/bc/BGBattle_Content_logo.png/160px-BGBattle_Content_logo.png" decoding="async" title="Battle Content" width="160" height="21" srcset="../../../images/thumb/b/bc/BGBattle_Content_logo.png/240px-BGBattle_Content_logo.png 1.5x, ../../../images/thumb/b/bc/BGBattle_Content_logo.png/320px-BGBattle_Content_logo.png 2x" /><br /><a href="https://www.bg-wiki.com/ffxi/Category:A.M.A.N._Trove" title="Category:A.M.A.N. Trove">A.M.A.N. Trove</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Ambuscade" title="Category:Ambuscade">Ambuscade</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Delve" class="mw-redirect" title="Delve">Delve</a> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Dynamis_Divergence" class="mw-redirect" title="Dynamis Divergence">Dynamis Divergence</a></span> &#8226; <a href="https://www.bg-wiki.com/ffxi/Geas_Fete" class="mw-redirect" title="Geas Fete">Geas Fete</a> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:High-Tier_Mission_Battlefields" title="Category:High-Tier Mission Battlefields">High-Tier Mission Battlefields</a></span> &#8226; <a href="https://www.bg-wiki.com/ffxi/Incursion" class="mw-redirect" title="Incursion">Incursion</a> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Master_Trials" title="Category:Master Trials">Master Trials</a></span> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Monstrosity" title="Category:Monstrosity">Monstrosity</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Odyssey" class="mw-redirect" title="Odyssey">Odyssey</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Omen" class="mw-redirect" title="Omen">Omen</a> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Sinister_Reign" class="mw-redirect" title="Sinister Reign">Sinister Reign</a></span> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Skirmish" title="Category:Skirmish">Skirmish</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Unity" class="mw-redirect" title="Unity">Unity</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Vagary" class="mw-redirect" title="Vagary">Vagary</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Voidwatch" class="mw-redirect" title="Voidwatch">Voidwatch</a>
+</td>
+<td rowspan="2" style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: top; padding-left:1em; padding-right:1em; padding: 2px; text-align: center; font-weight: bold; width: 35%;"><a href="https://www.bg-wiki.com/ffxi/Category:Missions" title="Category:Missions"><img alt="BG Missions Logo 1.png" src="../../../images/thumb/8/85/BG_Missions_Logo_1.png/115px-BG_Missions_Logo_1.png" decoding="async" width="115" height="33" srcset="../../../images/thumb/8/85/BG_Missions_Logo_1.png/173px-BG_Missions_Logo_1.png 1.5x, ../../../images/thumb/8/85/BG_Missions_Logo_1.png/230px-BG_Missions_Logo_1.png 2x" /></a><br /><span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:The_Voracious_Resurgence_Missions" title="Category:The Voracious Resurgence Missions">The Voracious Resurgence</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Rhapsodies_of_Vanadiel_Missions" title="Category:Rhapsodies of Vanadiel Missions">Rhapsodies of Vanadiel</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Seekers_of_Adoulin_Missions" title="Category:Seekers of Adoulin Missions">Seekers of Adoulin</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Wings_of_the_Goddess_Missions" title="Category:Wings of the Goddess Missions">Wings of the Goddess</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Aht_Urhgan_Missions" title="Category:Aht Urhgan Missions">Treasures of Aht Urhgan</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Promathia_Missions" title="Category:Promathia Missions">Chains of Promathia</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Zilart_Missions" title="Category:Zilart Missions">Rise of the Zilart</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Bastok_Missions" title="Category:Bastok Missions">Bastok</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:San_d'Oria_Missions" title="Category:San d&#39;Oria Missions">San d'Oria</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Windurst_Missions" title="Category:Windurst Missions">Windurst</a></span>
+</td></tr>
+<tr>
+<td style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: center; padding-left:1em; padding-right:1em; padding: 2px; text-align: center;">
+<table style="width: 100%; text-align: center;">
+<tbody><tr>
+<td><b><span style="font-size: 15px;"><a href="https://www.bg-wiki.com/ffxi/Reforged_Armor" class="mw-redirect" title="Reforged Armor">Reforged Armor</a></span></b><br /><span style="white-space: nowrap;"><b>Artifact:</b> <a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Artifact_Armor" title="Category:Reforged Artifact Armor">iL109</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Artifact_Armor_%2B1" title="Category:Reforged Artifact Armor +1">iL119</a>/<a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Artifact_Armor_%2B2" title="Category:Reforged Artifact Armor +2">+2</a>/<a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Artifact_Armor_%2B3" title="Category:Reforged Artifact Armor +3">+3</a></span> &#160;&#160;&#160; <span style="white-space: nowrap;"><b>Relic</b>: <a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Relic_Armor" title="Category:Reforged Relic Armor">iL109</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Relic_Armor_%2B1" title="Category:Reforged Relic Armor +1">iL119</a>/<a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Relic_Armor_%2B2" title="Category:Reforged Relic Armor +2">+2</a>/<a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Relic_Armor_%2B3" title="Category:Reforged Relic Armor +3">+3</a></span> &#160;&#160;&#160; <span style="white-space: nowrap;"><b>Empyrean</b>: <a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Empyrean_Armor" title="Category:Reforged Empyrean Armor">iL109</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Empyrean_Armor_%2B1" title="Category:Reforged Empyrean Armor +1">iL119</a></span>
+</td>
+<td><b><a href="https://www.bg-wiki.com/ffxi/Category:Abjurations#Abjuration_Sets_.28Escha_-_Ru.27Aun.29" title="Category:Abjurations">Abjurations iL119</a> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Superior_Equipment" class="mw-redirect" title="Superior Equipment">Superior Equipment</a></span></b><br /><b><a href="https://www.bg-wiki.com/ffxi/JSE_Necks" class="mw-redirect" title="JSE Necks">JSE Necks</a> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Dynamis_Divergence_Weapon_Augments" title="Dynamis Divergence Weapon Augments">Divergence Weapon Augments</a></span></b>
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: center; padding-left:1em; padding-right:1em; padding: 2px; font-weight: bold; text-align: center;"><a href="https://www.bg-wiki.com/ffxi/Category:Ultimate_Weapons" title="Category:Ultimate Weapons">Ultimate Weapons</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Ultimate_Weapon_Augments" class="mw-redirect" title="Ultimate Weapon Augments">Ultimate Weapon Augments</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Escutcheons" title="Category:Escutcheons">Escutcheons</a>
+</td>
+<td style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: center; padding-left:1em; padding-right:1em; padding: 2px; text-align: center;"><a href="https://www.bg-wiki.com/ffxi/Repeat_Login_Campaign#Current_Login_Campaign" title="Current Login Campaign"><img alt="Current Login Campaign" src="../../../images/thumb/a/af/Login_logo1.png/70px-Login_logo1.png" decoding="async" width="70" height="21" srcset="../../../images/thumb/a/af/Login_logo1.png/105px-Login_logo1.png 1.5x, ../../../images/thumb/a/af/Login_logo1.png/140px-Login_logo1.png 2x" /></a> <a href="https://www.bg-wiki.com/ffxi/Repeat_Login_Campaign#Current_Login_Campaign" title="Current Login Campaign"><img alt="Current Login Campaign" src="../../../images/thumb/8/84/Login_logo2.png/120px-Login_logo2.png" decoding="async" width="120" height="19" srcset="../../../images/thumb/8/84/Login_logo2.png/180px-Login_logo2.png 1.5x, ../../../images/thumb/8/84/Login_logo2.png/240px-Login_logo2.png 2x" /></a>
+</td></tr>
+<tr>
+<td style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: center; padding-left:1em; padding-right:1em; padding: 2px; text-align: center; font-weight: bold;"><a href="https://www.bg-wiki.com/ffxi/Guides" class="mw-redirect" title="Guides">Guides</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Crafting" class="mw-redirect" title="Crafting">Crafting</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Trust" title="Category:Trust">Trust Magic</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Job_Points" title="Job Points">Job Points</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Apex_Monster" title="Category:Apex Monster">Apex Monsters</a>
+</td>
+<td style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: center; padding-left:1em; padding-right:1em; padding: 2px; text-align: center;"><b><a href="https://www.bg-wiki.com/ffxi/Latest_Version_Update" class="mw-redirect" title="Latest Version Update">Latest Update Items</a></b>
+</td></tr></tbody></table>
+</div></div></div><div class="mw-indicators mw-body-content">
+</div>
+<h1 id="firstHeading" class="firstHeading">Version Update (11/19/2007)</h1><div id="bodyContentOuter"><div id="siteSub">From FFXI Wiki</div><div id="mw-page-header-links"><div role="navigation" class="mw-portlet tools-inline" id="p-namespaces" aria-labelledby="p-namespaces-label"><h3 id="p-namespaces-label" lang="en" dir="ltr">Namespaces</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="ca-nstab-main" class="selected"><a href="2007).html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="new"><a href="https://www.bg-wiki.com/index.php?title=Talk:Version_Update_(11/19/2007)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li></ul></div></div><div role="navigation" class="mw-portlet tools-inline" id="p-more" aria-labelledby="p-more-label"><h3 id="p-more-label" lang="en" dir="ltr">More</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="ca-more" class="dropdown-toggle"><span>More</span></li><li id="ca-languages" class="dropdown-toggle"><span>Languages</span></li></ul></div></div><div role="navigation" class="mw-portlet tools-inline" id="p-views" aria-labelledby="p-views-label"><h3 id="p-views-label" lang="en" dir="ltr">Page actions</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="ca-view" class="selected"><a href="2007).html"><span>Read</span></a></li><li id="ca-viewsource"><a href="https://www.bg-wiki.com/index.php?title=Version_Update_(11/19/2007)&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e"><span>View source</span></a></li><li id="ca-history"><a href="https://www.bg-wiki.com/index.php?title=Version_Update_(11/19/2007)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>History</span></a></li></ul></div></div></div><div class="visualClear"></div><div class="mw-body-content" id="bodyContent"><div id="contentSub"></div><div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="2007).html#Nov._20.2C_2007_.28JST.29_Update_Details"><span class="tocnumber">1</span> <span class="toctext">Nov. 20, 2007 (JST) Update Details</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="2007).html#Event-Related"><span class="tocnumber">2</span> <span class="toctext">Event-Related</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="2007).html#Missions"><span class="tocnumber">2.1</span> <span class="toctext">Missions</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="2007).html#New_Regions"><span class="tocnumber">2.2</span> <span class="toctext">New Regions</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="2007).html#Campaign"><span class="tocnumber">2.3</span> <span class="toctext">Campaign</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="2007).html#Mog_House"><span class="tocnumber">2.4</span> <span class="toctext">Mog House</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="2007).html#Chocobo_Circuit"><span class="tocnumber">2.5</span> <span class="toctext">Chocobo Circuit</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="2007).html#Gobbiebag_Quests"><span class="tocnumber">2.6</span> <span class="toctext">Gobbiebag Quests</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="2007).html#Misc._Additions_or_Changes"><span class="tocnumber">2.7</span> <span class="toctext">Misc. Additions or Changes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="2007).html#Battle-Related"><span class="tocnumber">3</span> <span class="toctext">Battle-Related</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="2007).html#Item-Related"><span class="tocnumber">4</span> <span class="toctext">Item-Related</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="2007).html#System-Related"><span class="tocnumber">5</span> <span class="toctext">System-Related</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="2007).html#Windows_Only"><span class="tocnumber">6</span> <span class="toctext">Windows Only</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="2007).html#Warnings_for_Windowed_Mode"><span class="tocnumber">6.1</span> <span class="toctext">Warnings for Windowed Mode</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="2007).html#Known_Issues"><span class="tocnumber">7</span> <span class="toctext">Known Issues</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="2007).html#Xbox_360_Only"><span class="tocnumber">7.1</span> <span class="toctext">Xbox 360 Only</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<br /><div align="center" id="bgwiki-toc-medrec"></div><br />
+<h2><span id="Nov._20,_2007_(JST)_Update_Details"></span><span class="mw-headline" id="Nov._20.2C_2007_.28JST.29_Update_Details">Nov. 20, 2007 (JST) Update Details</span></h2>
+<p>The content (including the new jobs and areas) in the Wings of the Goddess expansion disc will not be available for play until November 22, even in the case where the required software has been installed and expansion contents registered.
+</p>
+<h2><span class="mw-headline" id="Event-Related">Event-Related</span></h2>
+<ul><li>New menu headings have been added in conjunction with the Wings of the Goddess expansion contents.</li></ul>
+<h3><span class="mw-headline" id="Missions">Missions</span></h3>
+<ul><li>Missions</li></ul>
+<dl><dd>Wings of the Goddess</dd>
+<dd>Campaign</dd></dl>
+<ul><li>Quests</li></ul>
+<dl><dd>Crystal War</dd></dl>
+<ul><li>Region Info</li></ul>
+<dl><dd>Campaign</dd></dl>
+<ul><li>Many new quests are available in the areas added with the Wings of the Goddess.</li></ul>
+<h3><span class="mw-headline" id="New_Regions">New Regions</span></h3>
+<ul><li>The following new regions have been added.</li></ul>
+<dl><dd><a href="https://www.bg-wiki.com/ffxi/The_Ronfaure_Front" title="The Ronfaure Front">The Ronfaure Front</a></dd>
+<dd><a href="https://www.bg-wiki.com/ffxi/The_Norvallen_Front" title="The Norvallen Front">The Norvallen Front</a></dd>
+<dd><a href="https://www.bg-wiki.com/ffxi/The_Gustaberg_Front" title="The Gustaberg Front">The Gustaberg Front</a></dd>
+<dd><a href="https://www.bg-wiki.com/ffxi/The_Derfland_Front" title="The Derfland Front">The Derfland Front</a></dd>
+<dd><a href="https://www.bg-wiki.com/ffxi/The_Sarutabaruta_Front" title="The Sarutabaruta Front">The Sarutabaruta Front</a></dd>
+<dd><a href="https://www.bg-wiki.com/ffxi/The_Aragoneu_Front" title="The Aragoneu Front">The Aragoneu Front</a></dd></dl>
+<ul><li>Maps for areas that exist in present Vana’diel will be usable in the same area in the past.
+<ul><li>Past Vana’diel time will not be displayed when selecting “Current Time” from the main menu.</li></ul></li></ul>
+<h3><span class="mw-headline" id="Campaign">Campaign</span></h3>
+<ul><li>A new, large-scale battle system known as “Campaign” has been introduced.</li></ul>
+<ul><li>The icon that represents beastman-controlled regions on the Conquest map has been changed.</li></ul>
+<h3><span class="mw-headline" id="Mog_House">Mog House</span></h3>
+<ul><li>It is no longer necessary to speak with an NPC to move to a Rent-a-Room.</li></ul>
+<ul><li>The “Residence” heading on the Profile window has been deleted.</li></ul>
+<ul><li>Party members can now be invited into your Mog House.</li></ul>
+<dl><dd><ul><li>You can open your Mog House to all party and alliance members by selecting the new “Open Mog” option added to the Mog House menu.</li>
+<li>Visit a party member’s open Mog House by speaking to the NPC located near the Residential Area entrance and selecting that character’s name from the list displayed. You will be led to your friend’s Mog House automatically.</li></ul></dd></dl>
+<ul><li>Disbanding or leaving a party will not expel party members that are already in your Mog House. Selecting “Close Mog” from the Mog House menu will, however, expel all characters besides the owner.</li></ul>
+<ul><li>The following changes have taken place in the quests “<a href="https://www.bg-wiki.com/ffxi/An_Understanding_Overlord%3F" title="An Understanding Overlord?">An Understanding Overlord?</a>”, “<a href="https://www.bg-wiki.com/ffxi/An_Affable_Adamantking%3F" title="An Affable Adamantking?">An Affable Adamantking?</a>”, “<a href="https://www.bg-wiki.com/ffxi/A_Moral_Manifest%3F" title="A Moral Manifest?">A Moral Manifest?</a>”, and “<a href="https://www.bg-wiki.com/ffxi/A_Generous_General%3F" title="A Generous General?">A Generous General?</a>”:</li></ul>
+<dl><dd><ul><li>It is now possible to begin the remaining three quests even after completing one of the quests mentioned above and receiving the reward. However, the quests will not become available to characters that have the previous quest reward currently equipped.</li>
+<li>It is now possible to voluntarily abandon an accepted quest by speaking with the respective guildmaster.</li></ul></dd></dl>
+<h3><span class="mw-headline" id="Chocobo_Circuit">Chocobo Circuit</span></h3>
+<ul><li>The following changes have been made to the <a href="https://www.bg-wiki.com/ffxi/Chocobo_Circuit" title="Chocobo Circuit">Chocobo Circuit</a>:</li></ul>
+<dl><dd><ul><li>By speaking with an NPC in the Chocobet Center or the grandstand, it is now possible to see a list detailing the information of chocobos that will appear in the race overseen by that NPC.</li>
+<li>You can now see the results of previous races at the General Information Center.</li>
+<li>You can now choose whether or not to return a chocobet ticket to a Chocobet Center NPC after a race.</li>
+<li>The length of time a chocobo will be required to wait between entering races has been reduced from one week to one day (Earth time).</li>
+<li>The following changes have been made to C3 Chocobo Races:</li></ul>
+<dl><dd><ul><li>Signup fee reduced from 5,000 gil to 1,000 gil</li>
+<li>Signup fee reduced from 30 chocobucks to 20 chocobucks</li>
+<li>Winnings reduced from 50,000 gil to 10,000 gil</li></ul></dd></dl>
+<ul><li>The following changes have been made to C4 Chocobo Races:&lt;</li></ul>
+<dl><dd><ul><li>Signup fee reduced from 2,000 gil to 500 gil</li>
+<li>Winnings reduced from 10,000 gil to 5,000gil</li></ul></dd></dl>
+<ul><li>C1 and C2 Chocobo Races have been introduced.</li>
+<li>Certain NPC dialogs can now be canceled partway through.</li></ul></dd></dl>
+<h3><span class="mw-headline" id="Gobbiebag_Quests">Gobbiebag Quests</span></h3>
+<ul><li>Gobbiebag quests Part VII and Part VIII have been added.</li></ul>
+<dl><dd><ul><li>These quests will become available after fulfilling certain conditions, and allow players to carry even more items in their all-new gobbiebags!</li>
+<li>Players must complete all previous gobbiebag quests before the new gobbiebag quests will become available.</li></ul></dd></dl>
+<h3><span class="mw-headline" id="Misc._Additions_or_Changes">Misc. Additions or Changes</span></h3>
+<ul><li>Toraimaral Canal Gate　→　Gingerberry Grove</li></ul>
+<dl><dd>The label “Toraimarai Canal Gate” on the Windurst Waters map has been changed to “<a href="https://www.bg-wiki.com/ffxi/Gingerberry_Grove" title="Gingerberry Grove">Gingerberry Grove</a>”.</dd></dl>
+<ul><li>The following labels have been added to the Davoi map:</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Bellenorque_Abbey" title="Bellenorque Abbey">Bellenorque Abbey</a></li>
+<li><a href="https://www.bg-wiki.com/ffxi/Maison_de_Beaulaurand" title="Maison de Beaulaurand">Maison de Beaulaurand</a></li>
+<li><a href="https://www.bg-wiki.com/ffxi/Devil's_Finger" title="Devil&#39;s Finger">Devil's Finger</a></li>
+<li><a href="https://www.bg-wiki.com/ffxi/The_Pechune" title="The Pechune">The Pechune</a></li>
+<li><a href="https://www.bg-wiki.com/ffxi/The_Rofeule" title="The Rofeule">The Rofeule</a></li></ul></dd></dl>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Battle-Related">Battle-Related</span></h2>
+<ul><li>Two new jobs, dancer and scholar, are now available.</li></ul>
+<dl><dd><ul><li>Specific quests must be completed in order to obtain each job.</li>
+<li>The limit break quest “Shattering Stars” will be implemented for dancer and scholar in the next version update.</li>
+<li>In order to raise the dancer or scholar job above level 71 before the next version update, it will be necessary to first complete “Shattering Stars” with a different job.</li></ul></dd></dl>
+<ul><li>Many new monsters have been introduced along with the Wings of the Goddess areas.</li></ul>
+<dl><dd><ul><li>Some of these creatures will react aggressively to the use of job abilities and weapon skills.</li></ul></dd></dl>
+<ul><li>The following changes have been made to two-handed weapons:&lt;</li></ul>
+<dl><dd><ul><li>Bonuses from attributes have been reduced.</li>
+<li>The method for calculating damage has been readjusted.</li></ul></dd></dl>
+<ul><li>The effects of the following weapon skills have been adjusted:</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Tachi:_Yukikaze" title="Tachi: Yukikaze">Tachi: Yukikaze</a></li>
+<li><a href="https://www.bg-wiki.com/ffxi/Tachi:_Gekko" title="Tachi: Gekko">Tachi: Gekko</a></li>
+<li><a href="https://www.bg-wiki.com/ffxi/Tachi:_Kasha" title="Tachi: Kasha">Tachi: Kasha</a></li></ul></dd></dl>
+<ul><li>A new white magic spell “Repose” has been added.</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Repose" title="Repose">Repose</a> (Level 48)
+<ul><li>Puts an enemy to sleep.</li></ul></li></ul></dd></dl>
+<ul><li>A new thief job ability “Accomplice” has been added.</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Accomplice" title="Accomplice">Accomplice</a> (Level 65)
+<ul><li>Steals half of the target party member's enmity and redirects it to the thief.</li></ul></li></ul></dd></dl>
+<ul><li>The following changes have been made to beastmaster pet commands:</li></ul>
+<dl><dd><ul><li>”Heel,” “Stay,” and “Leave” now share the same recast time.</li>
+<li>The recast time for ”Heel,” “Stay,” and “Leave” has been reduced from 10 seconds to 5 seconds.</li>
+<li>The amount of health recovered when a beastmaster uses the “Stay” command on a pet out of combat has been greatly increased.</li></ul></dd></dl>
+<ul><li>A new beastmaster pet command “Snarl” has been added.</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Snarl" title="Snarl">Snarl</a> (Level 45)
+<ul><li>Transfer enmity to a pet invoked with the "Call Beast" ability.</li></ul></li></ul></dd></dl>
+<ul><li>A new ranger job ability “Velocity Shot” has been added.</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Velocity_Shot" title="Velocity Shot">Velocity Shot</a> (Level 45)
+<ul><li>Increases attack power and speed of ranged attacks, while reducing attack power and speed of melee attacks.</li></ul></li></ul></dd></dl>
+<ul><li>Several issues concerning the Gigas race have been addressed. This has resulted in a change of graphics and jobs for a section of the Gigas population.</li></ul>
+<ul><li>The strength of the Fomor notorious monster “<a href="https://www.bg-wiki.com/ffxi/Lobais" title="Lobais">Lobais</a>” who inhabits the Sacrarium area of the Tavnazian Archipelago has been adjusted.</li></ul>
+<ul><li>A character’s 2-hour ability will now wear off when changing areas.</li></ul>
+<ul><li>The following changes have been made to Pankration:</li></ul>
+<dl><dd><ul><li>New feral skills have been added.</li></ul></dd></dl>
+<pre>STR +50/DEX +50/VIT +50/AGI +50/INT +50/MND +50/CHR +50/Max HP +30%/Max MP +30%/Attack +30%
+Defense 30%/Magic Attack +30%/Magic Defense +30%/Accuracy +30%/Magic Accuracy +30%/Evasion +30%
+Interruption Rate -50%
+</pre>
+<dl><dd><ul><li>It is now possible to capture elementals on soul plates for use in creating a soul reflector.</li>
+<li>It is now possible to confirm your match time by speaking with the NPC after making a match application.</li>
+<li>Investigating the fence surrounding the battle cages will now allow you to choose among several camera angles from which to observe the current match.</li></ul></dd></dl>
+<h2><span class="mw-headline" id="Item-Related">Item-Related</span></h2>
+<ul><li>New items purchasable with guild points have been added to the trading contract quests.</li>
+<li>New “food” category items have been added.</li>
+<li>Many new types of equipment have been added.</li>
+<li>The following items have been added to the equipment/furniture accepted by the storage NPC:</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Moogle_Cap" title="Moogle Cap">Moogle Cap</a></li>
+<li><a href="https://www.bg-wiki.com/ffxi/Nomad_Cap" title="Nomad Cap">Nomad Cap</a></li>
+<li><a href="https://www.bg-wiki.com/ffxi/Redeyes" title="Redeyes">Redeyes</a></li></ul></dd></dl>
+<ul><li>The icon graphics for the following items have been changed:</li></ul>
+<dl><dd><ul><li>Thief's Tools/Bast Parchment/Insect Fletchings/Southern Pearl/Eastern Paper/Unicorn Horn/Ultima's Cerebrum/Ultima's Heart/Ultima's Claw/Ultima's Leg/Ultima's Tail/Omega's Eye/Omega's Heart/Omega's Foreleg/Omega's Hind Leg/Omega's Tail/Plaited Cord/Vanilla/Marid Hide/Marid Leather/Orobon Lure/Cerberus Hide/Cerberus Leather/Puk Fletching/Plasma Oil/Soulflayer Tentacle/Khimaira Horn/Khimaira Tail/Giant Donko/Hermes Quencher/Scapegoat/Apkallu Egg/Lufaise Fly/Bronze Bullet/Morion Tathlum/Phantom Tathlum/Arctic Wind/East Wind/Zephyr/Antarctic Wind/Nazar Bonjuk</li></ul></dd></dl>
+<ul><li>The attributes for the “ebisu fishing rod” have been adjusted.</li>
+<li>The names of the following items have been changed:</li></ul>
+<dl><dd><ul><li>Neutralizing Plt. -&gt; Neutralizing Slv.</li>
+<li>Rogue's Plt. -&gt; Rogue's Silver</li></ul></dd></dl>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="System-Related">System-Related</span></h2>
+<ul><li>The “Macros” option in the main menu has been expanded to contain 20 macro “books.”</li></ul>
+<p>It is possible to register up to ten “sets” of macros within each book. Each macro book can be labeled with any name the player chooses.
+</p>
+<ul><li>New text commands have been added:</li></ul>
+<dl><dd><ul><li>/macro</li>
+<li>/campaignmap</li>
+<li>/cmap</li></ul></dd></dl>
+<ul><li>/macro</li></ul>
+<dl><dd><ul><li>Individual macro books or sets can be selected by combining the “/macro“ command with the “book” and “set” subcommands.&lt;&gt;</li>
+<li>Example:</li></ul>
+<dl><dd><ul><li>To select Book 15</li></ul>
+<dl><dd><ul><li>/macro book 15</li></ul></dd></dl></dd></dl>
+<ul><li>To select Set 3</li></ul>
+<dl><dd><dl><dd><ul><li>/macro set 3</li></ul></dd></dl></dd></dl></dd></dl>
+<ul><li>/campaignmap, /cmap</li></ul>
+<dl><dd><ul><li>This command opens the “Campaign” map under “Region Info” in the main menu.</li></ul></dd></dl>
+<ul><li>An issue with the arrival and departure animations of the airships and ferries has been addressed.</li></ul>
+<ul><li>An issue wherein the travel time for the following ferry routes was shorter than intended has been addressed:</li></ul>
+<dl><dd><ul><li>Open sea route to Mhaura</li>
+<li>Silver Sea route to Nashmau</li></ul></dd></dl>
+<ul><li>Many new terms have been added to the auto-translate dictionary.</li></ul>
+<table width="60%" align="center">
+<tbody><tr>
+<td>Category
+</td>
+<td>Term
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Campaign" class="mw-redirect" title="Campaign">Campaign</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Allied_Notes" title="Allied Notes">Allied Notes</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Morale&amp;action=edit&amp;redlink=1" class="new" title="Morale (page does not exist)">Morale</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Prosperity&amp;action=edit&amp;redlink=1" class="new" title="Prosperity (page does not exist)">Prosperity</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Reconnaissance&amp;action=edit&amp;redlink=1" class="new" title="Reconnaissance (page does not exist)">Reconnaissance</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Fortifications&amp;action=edit&amp;redlink=1" class="new" title="Fortifications (page does not exist)">Fortifications</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Resources&amp;action=edit&amp;redlink=1" class="new" title="Resources (page does not exist)">Resources</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Influence&amp;action=edit&amp;redlink=1" class="new" title="Influence (page does not exist)">Influence</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Controlled_Areas&amp;action=edit&amp;redlink=1" class="new" title="Controlled Areas (page does not exist)">Controlled Areas</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Heroism_Gauge&amp;action=edit&amp;redlink=1" class="new" title="Heroism Gauge (page does not exist)">Heroism Gauge</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=In_Conflict&amp;action=edit&amp;redlink=1" class="new" title="In Conflict (page does not exist)">In Conflict</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Confederate_Icon&amp;action=edit&amp;redlink=1" class="new" title="Confederate Icon (page does not exist)">Confederate Icon</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Layer_Area&amp;action=edit&amp;redlink=1" class="new" title="Layer Area (page does not exist)">Layer Area</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Campaign_Evaluation&amp;action=edit&amp;redlink=1" class="new" title="Campaign Evaluation (page does not exist)">Campaign Evaluation</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Allied_Tags&amp;action=edit&amp;redlink=1" class="new" title="Allied Tags (page does not exist)">Allied Tags</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Sigil" title="Sigil">Sigil</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Temporary_Item&amp;action=edit&amp;redlink=1" class="new" title="Temporary Item (page does not exist)">Temporary Item</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Campaign_Ops" class="mw-redirect" title="Campaign Ops">Campaign Ops</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Campaign_battle" class="mw-redirect" title="Campaign battle">campaign battle</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Checkpoint_garrison&amp;action=edit&amp;redlink=1" class="new" title="Checkpoint garrison (page does not exist)">checkpoint garrison</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Medal&amp;action=edit&amp;redlink=1" class="new" title="Medal (page does not exist)">medal</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Opinion_poll&amp;action=edit&amp;redlink=1" class="new" title="Opinion poll (page does not exist)">opinion poll</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Audience&amp;action=edit&amp;redlink=1" class="new" title="Audience (page does not exist)">audience</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=War_climate_details&amp;action=edit&amp;redlink=1" class="new" title="War climate details (page does not exist)">war climate details</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Battle_strategies&amp;action=edit&amp;redlink=1" class="new" title="Battle strategies (page does not exist)">battle strategies</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Internal_policy&amp;action=edit&amp;redlink=1" class="new" title="Internal policy (page does not exist)">internal policy</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Skill" class="mw-redirect" title="Skill">skill</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Production&amp;action=edit&amp;redlink=1" class="new" title="Production (page does not exist)">production</a>
+</td></tr>
+<tr>
+<td>Game Terms
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Op_Credits" class="mw-redirect" title="Op Credits">Op Credits</a>
+</td></tr>
+<tr>
+<td>Text Commands
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Macro" title="Macro">/macro</a>
+</td></tr>
+<tr>
+<td>Text Commands
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Campaignmap&amp;action=edit&amp;redlink=1" class="new" title="Campaignmap (page does not exist)">/campaignmap</a>
+</td></tr>
+<tr>
+<td>Groups
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Allied_Forces_of_Altana&amp;action=edit&amp;redlink=1" class="new" title="Allied Forces of Altana (page does not exist)">Allied Forces of Altana</a>
+</td></tr>
+<tr>
+<td>Groups
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Royal_Army_of_San_d'Oria&amp;action=edit&amp;redlink=1" class="new" title="Royal Army of San d&#39;Oria (page does not exist)">Royal Army of San d'Oria</a>
+</td></tr>
+<tr>
+<td>Groups
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Republican_Army_of_Bastok&amp;action=edit&amp;redlink=1" class="new" title="Republican Army of Bastok (page does not exist)">Republican Army of Bastok</a>
+</td></tr>
+<tr>
+<td>Groups
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Federal_Forces_of_Windurst&amp;action=edit&amp;redlink=1" class="new" title="Federal Forces of Windurst (page does not exist)">Federal Forces of Windurst</a>
+</td></tr>
+<tr>
+<td>Groups
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Orcish_Hosts&amp;action=edit&amp;redlink=1" class="new" title="Orcish Hosts (page does not exist)">Orcish Hosts</a>
+</td></tr>
+<tr>
+<td>Groups
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Quadav_Shieldwarriors" class="mw-redirect" title="Quadav Shieldwarriors">Quadav Shieldwarriors</a>
+</td></tr>
+<tr>
+<td>Groups
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Yagudo_Theomilitary&amp;action=edit&amp;redlink=1" class="new" title="Yagudo Theomilitary (page does not exist)">Yagudo Theomilitary</a>
+</td></tr>
+<tr>
+<td>Groups
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Dark_Kindred&amp;action=edit&amp;redlink=1" class="new" title="Dark Kindred (page does not exist)">Dark Kindred</a>
+</td></tr>
+<tr>
+<td>Jobs
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Dancer" title="Dancer">Dancer</a>
+</td></tr>
+<tr>
+<td>Jobs
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Scholar" title="Scholar">Scholar</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Repose" title="Repose">Repose</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Pyrohelix" title="Pyrohelix">Pyrohelix</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Hydrohelix" title="Hydrohelix">Hydrohelix</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Ionohelix" title="Ionohelix">Ionohelix</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Cryohelix" title="Cryohelix">Cryohelix</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Geohelix" title="Geohelix">Geohelix</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Anemohelix" title="Anemohelix">Anemohelix</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Luminohelix" title="Luminohelix">Luminohelix</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Noctohelix" title="Noctohelix">Noctohelix</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Firestorm" title="Firestorm">Firestorm</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Rainstorm" title="Rainstorm">Rainstorm</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Thunderstorm" title="Thunderstorm">Thunderstorm</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Hailstorm" title="Hailstorm">Hailstorm</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Sandstorm" title="Sandstorm">Sandstorm</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Windstorm" title="Windstorm">Windstorm</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Aurorastorm" title="Aurorastorm">Aurorastorm</a>
+</td></tr>
+<tr>
+<td>Spells
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Voidstorm" title="Voidstorm">Voidstorm</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Trance" title="Trance">Trance</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Sambas" class="mw-redirect" title="Sambas">Sambas</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Drain_Samba" title="Drain Samba">Drain Samba</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Aspir_Samba" title="Aspir Samba">Aspir Samba</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Haste_Samba" title="Haste Samba">Haste Samba</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Waltzes" class="mw-redirect" title="Waltzes">Waltzes</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Curing_Waltz" title="Curing Waltz">Curing Waltz</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Healing_Waltz" title="Healing Waltz">Healing Waltz</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Divine_Waltz" title="Divine Waltz">Divine Waltz</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Jigs" class="mw-redirect" title="Jigs">Jigs</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Spectral_Jig" title="Spectral Jig">Spectral Jig</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Chocobo_Jig" title="Chocobo Jig">Chocobo Jig</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Steps" class="mw-redirect" title="Steps">Steps</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Quickstep" title="Quickstep">Quickstep</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Box_Step" title="Box Step">Box Step</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Stutter_Step" title="Stutter Step">Stutter Step</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Flourishes" class="mw-redirect" title="Flourishes">Flourishes</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Wild_Flourish" title="Wild Flourish">Wild Flourish</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Desperate_Flourish" title="Desperate Flourish">Desperate Flourish</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Animated_Flourish" title="Animated Flourish">Animated Flourish</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Violent_Flourish" title="Violent Flourish">Violent Flourish</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Reverse_Flourish" title="Reverse Flourish">Reverse Flourish</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Building_Flourish" title="Building Flourish">Building Flourish</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Tabula_Rasa" title="Tabula Rasa">Tabula Rasa</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Light_Arts" title="Light Arts">Light Arts</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Dark_Arts" title="Dark Arts">Dark Arts</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Modus_Veritas" title="Modus Veritas">Modus Veritas</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Strategems&amp;action=edit&amp;redlink=1" class="new" title="Strategems (page does not exist)">Strategems</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Penury" title="Penury">Penury</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Celerity" title="Celerity">Celerity</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Rapture" title="Rapture">Rapture</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Accession" title="Accession">Accession</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Parsimony" title="Parsimony">Parsimony</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Alacrity" title="Alacrity">Alacrity</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Ebullience" title="Ebullience">Ebullience</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Manifestation" title="Manifestation">Manifestation</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Accomplice" title="Accomplice">Accomplice</a>
+</td></tr>
+<tr>
+<td>Job Abilities
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Velocity_Shot" title="Velocity Shot">Velocity Shot</a>
+</td></tr>
+<tr>
+<td>Pet Commands
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Snarl" title="Snarl">Snarl</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Southern_San_d'Oria_(S)" title="Southern San d&#39;Oria (S)">Southern San d'Oria (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/East_Ronfaure_(S)" title="East Ronfaure (S)">East Ronfaure (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Jugner_Forest_(S)" title="Jugner Forest (S)">Jugner Forest (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Batallia_Downs_(S)" title="Batallia Downs (S)">Batallia Downs (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Everbloom_Hollow" title="Everbloom Hollow">Everbloom Hollow</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/The_Eldieme_Necropolis_(S)" title="The Eldieme Necropolis (S)">The Eldieme Necropolis (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Bastok_Markets_(S)" title="Bastok Markets (S)">Bastok Markets (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/North_Gustaberg_(S)" title="North Gustaberg (S)">North Gustaberg (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Grauberg_(S)" title="Grauberg (S)">Grauberg (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Ruhotz_Silvermines" title="Ruhotz Silvermines">Ruhotz Silvermines</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Vunkerl_Inlet_(S)" title="Vunkerl Inlet (S)">Vunkerl Inlet (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Pashhow_Marshlands_(S)" title="Pashhow Marshlands (S)">Pashhow Marshlands (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Rolanberry_Fields_(S)" title="Rolanberry Fields (S)">Rolanberry Fields (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Crawlers'_Nest_(S)" title="Crawlers&#39; Nest (S)">Crawlers' Nest (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Windurst_Waters_(S)" title="Windurst Waters (S)">Windurst Waters (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/West_Sarutabaruta_(S)" title="West Sarutabaruta (S)">West Sarutabaruta (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Fort_Karugo-Narugo_(S)" title="Fort Karugo-Narugo (S)">Fort Karugo-Narugo (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Ghoyu's_Reverie" title="Ghoyu&#39;s Reverie">Ghoyu's Reverie</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Meriphataud_Mountains_(S)" title="Meriphataud Mountains (S)">Meriphataud Mountains (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Sauromugue_Champaign_(S)" title="Sauromugue Champaign (S)">Sauromugue Champaign (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Garlaige_Citadel_(S)" title="Garlaige Citadel (S)">Garlaige Citadel (S)</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/The_Ronfaure_Front" title="The Ronfaure Front">The Ronfaure Front</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/The_Norvallen_Front" title="The Norvallen Front">The Norvallen Front</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/The_Gustaberg_Front" title="The Gustaberg Front">The Gustaberg Front</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/The_Derfland_Front" title="The Derfland Front">The Derfland Front</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/The_Sarutabaruta_Front" title="The Sarutabaruta Front">The Sarutabaruta Front</a>
+</td></tr>
+<tr>
+<td>Place Names 2
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/The_Aragoneu_Front" title="The Aragoneu Front">The Aragoneu Front</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Smokescreen&amp;action=edit&amp;redlink=1" class="new" title="Smokescreen (page does not exist)">Smokescreen</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Pit_Spider&amp;action=edit&amp;redlink=1" class="new" title="Pit Spider (page does not exist)">Pit Spider</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Aegis_Scream&amp;action=edit&amp;redlink=1" class="new" title="Aegis Scream (page does not exist)">Aegis Scream</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Granite_Rose&amp;action=edit&amp;redlink=1" class="new" title="Granite Rose (page does not exist)">Granite Rose</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Hawk_Eye&amp;action=edit&amp;redlink=1" class="new" title="Hawk Eye (page does not exist)">Hawk Eye</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Slaughterhouse&amp;action=edit&amp;redlink=1" class="new" title="Slaughterhouse (page does not exist)">Slaughterhouse</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Brave_Dawn&amp;action=edit&amp;redlink=1" class="new" title="Brave Dawn (page does not exist)">Brave Dawn</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Stock_and_Awe&amp;action=edit&amp;redlink=1" class="new" title="Stock and Awe (page does not exist)">Stock and Awe</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Materiel_Storm&amp;action=edit&amp;redlink=1" class="new" title="Materiel Storm (page does not exist)">Materiel Storm</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Vanguard-X&amp;action=edit&amp;redlink=1" class="new" title="Vanguard-X (page does not exist)">Vanguard-X</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Crimson_Domino&amp;action=edit&amp;redlink=1" class="new" title="Crimson Domino (page does not exist)">Crimson Domino</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Crystal_Fist&amp;action=edit&amp;redlink=1" class="new" title="Crystal Fist (page does not exist)">Crystal Fist</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Iron_Anvil&amp;action=edit&amp;redlink=1" class="new" title="Iron Anvil (page does not exist)">Iron Anvil</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Streetsweeper&amp;action=edit&amp;redlink=1" class="new" title="Streetsweeper (page does not exist)">Streetsweeper</a>
+</td></tr>
+<tr>
+<td>Game Terms 2
+</td>
+<td><a href="https://www.bg-wiki.com/index.php?title=Delta_Strike&amp;action=edit&amp;redlink=1" class="new" title="Delta Strike (page does not exist)">Delta Strike</a>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Windows_Only">Windows Only</span></h2>
+<p>The option “Run in Windowed Mode” has been added to the “General” tab of the FINAL FANTASY XI Config Tool. Checking this box and saving the new settings will run the game in windowed mode the next time you start FINAL FANTASY XI.
+</p>
+<ul><li>When checking this box, the message “You may experience lower frame rates or other problems depending on your computer's specifications. Uncheck the box and use full screen mode to improve performance.” will be displayed. To switch to windowed mode, you will be required to select “Yes” from the subsequent options provided.
+<ul><li>Using the default settings while in windowed mode may cause problems with the game screen.</li></ul></li></ul>
+<p>The following settings are suggested if any problems are encountered in windowed mode.
+These settings are a general example, and the optimal values may differ depending on the graphic card, etc. being employed.
+</p>
+<h3><span class="mw-headline" id="Warnings_for_Windowed_Mode">Warnings for Windowed Mode</span></h3>
+<p>After changing the settings, the size of the window will be displayed under “Overlay Graphics Resolution” on the “Screen Size” tab. While in windowed mode, it is possible to alter the window size by clicking and dragging on the edge of the window with the mouse. Press and hold the Shift key to maintain the same vertical and horizontal proportions. Right-click on the title bar and select “Default Size” to return the window to the default window size setting.
+</p><p>Even in the case where the maximum value for the “Overlay Graphics Resolution” is set to the same value as the full screen display, the window will be slightly smaller than the full screen.
+</p><p>It is not possible to take screenshots in windowed mode by pressing the Alt key and the Print Screen key.
+</p><p>The brightness, contrast, sharpness, etc. of windowed mode will differ slightly from full screen mode.
+</p><p>You may lose your connection and be returned to PlayOnline when performing the following actions while FINAL FANTASY XI is running:
+Activating certain screen savers
+Starting other applications
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Known_Issues">Known Issues</span></h2>
+<ul><li>The terms “Burrow” and “Bore” are reversed in the display shown by the Chocobet NPCs when asked for race chocobo information.</li></ul>
+<h3><span class="mw-headline" id="Xbox_360_Only">Xbox 360 Only</span></h3>
+<p>After installing the expansion disc Wings of the Goddess, or the Final Fantasy XI: Vana'diel Collection, and attempting to download the version update, the error code "POL-12313" will be displayed. Retrying the download will allow the version update to proceed normally.
+</p>
+
+
+
+</div></div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://www.bg-wiki.com/index.php?title=Version_Update_(11/19/2007)&amp;oldid=376587">https://www.bg-wiki.com/index.php?title=Version_Update_(11/19/2007)&amp;oldid=376587</a>"</div>
+<div class="visualClear"></div></div></div></div><br /><div style="text-align:center;">
+<div id="bgwiki-bottomboard"></div>
+<script type="text/javascript">
+						    window['nitroAds'].createAd('bgwiki-bottomboard', {
+						        "refreshLimit": 10,
+						        "refreshTime": 90,
+								"renderVisibleOnly": true,
+								"refreshVisibleOnly": true,						        
+						        "mediaQuery": "(min-width: 748px)",
+						        "sizes": [
+						            [
+						                728,
+						                90
+						            ]
+						        ]
+						    });
+						</script>
+<script type="text/javascript">
+						    window['nitroAds'].createAd('bgwiki-category-board', {
+						        "refreshLimit": 10,
+						        "refreshTime": 90,
+								"renderVisibleOnly": true,
+								"refreshVisibleOnly": true,						        
+						        "mediaQuery": "(min-width: 748px)",
+						        "sizes": [
+						            [
+						                728,
+						                90
+						            ]
+						        ]
+						    });
+						</script>
+<script type="text/javascript">
+						    window['nitroAds'].createAd('bgwiki-anchor-mobile', {
+						        "refreshLimit": 10,
+						        "refreshTime": 60,
+								"format": "anchor",
+								"anchor": "bottom",						        
+						        "mediaQuery": "(min-width: 320px) and (max-width: 747px)"
+						    });
+						</script>
+<script type="text/javascript">
+						    window['nitroAds'].createAd('bgwiki-toc-medrec', {
+						        "refreshLimit": 10,
+						        "refreshTime": 90,
+								"renderVisibleOnly": true,
+								"refreshVisibleOnly": true,						        
+						        "sizes": [
+						            [
+						                300,
+						                250
+						            ]
+						        ]
+						    });
+						</script>
+</div><script type="text/javascript">
+						    window['nitroAds'].createAd('bgwiki-sidebar', {
+						      "refreshLimit": 10,
+						      "refreshTime": 90,
+							  "renderVisibleOnly": true,
+  							  "refreshVisibleOnly": true,						      
+						      "mediaQuery": "(min-width: 1100px)",
+						      "sizes": [
+						        [
+						          160,
+						          600
+						        ]
+						      ]
+						    });
+						    </script></div><div id="content-bottom-stuff"><div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.bg-wiki.com/ffxi/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://www.bg-wiki.com/ffxi/Category:Update_History" title="Category:Update History">Update History</a></li></ul></div></div></div></div><div id="mw-site-navigation"><div id="p-logo" class="mw-portlet" role="banner"><a class="mw-wiki-logo timeless-logo" href="https://www.bg-wiki.com/ffxi/Main_Page" title="Visit the main page"><img alt="FFXI Wiki" width="125px" src="../../../bg-wiki.svg" /></a></div><div id="site-navigation" class="sidebar-chunk"><h2><span>Navigation</span></h2><div class="sidebar-inner"><div role="navigation" class="mw-portlet" id="p-Navigation" aria-labelledby="p-Navigation-label"><h3 id="p-Navigation-label" lang="en" dir="ltr">Navigation</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-recentchanges"><a href="https://www.bg-wiki.com/ffxi/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r"><span>Recent changes</span></a></li><li id="n-BG-Forums"><a href="http://www.bluegartr.com/"><span>BG Forums</span></a></li><li id="n-No-Account.3F-Register.21"><a href="https://www.bg-wiki.com/index.php?title=Special:UserLogin"><span>No Account? Register!</span></a></li><li id="n-BG-Wiki-Discord.21"><a href="https://discord.gg/zpPEzGeJAR"><span>BG Wiki Discord!</span></a></li><li id="n-New-Editor.3F-Read-This.21"><a href="https://www.bg-wiki.com/ffxi/BGWiki:Getting_started"><span>New Editor? Read This!</span></a></li><li id="n-BG-Wiki-Feedback"><a href="https://www.bg-wiki.com/ffxi/BGWiki:Suggestions"><span>BG Wiki Feedback</span></a></li></ul></div></div><div role="navigation" class="mw-portlet" id="p-Popular_Pages" aria-labelledby="p-Popular_Pages-label"><h3 id="p-Popular_Pages-label" lang="en" dir="ltr">Popular Pages</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-Ambuscade"><a href="https://www.bg-wiki.com/ffxi/Category:Ambuscade"><span>Ambuscade</span></a></li><li id="n-Escha"><a href="https://www.bg-wiki.com/ffxi/Category:Escha"><span>Escha</span></a></li><li id="n-High-Tier-Battlefields"><a href="https://www.bg-wiki.com/ffxi/Category:High-Tier_Mission_Battlefields"><span>High-Tier Battlefields</span></a></li><li id="n-Odyssey"><a href="https://www.bg-wiki.com/ffxi/Category:Odyssey"><span>Odyssey</span></a></li><li id="n-Unity"><a href="https://www.bg-wiki.com/ffxi/Category:Unity_Concord"><span>Unity</span></a></li><li id="n-Omen"><a href="https://www.bg-wiki.com/ffxi/Category:Omen"><span>Omen</span></a></li><li id="n-Dynamis---Divergence"><a href="https://www.bg-wiki.com/ffxi/Category:Dynamis_-_Divergence"><span>Dynamis - Divergence</span></a></li><li id="n-Reforged-Armor"><a href="https://www.bg-wiki.com/ffxi/Category:Armor"><span>Reforged Armor</span></a></li><li id="n-Ultimate-Weapons"><a href="https://www.bg-wiki.com/ffxi/Category:Ultimate_Weapons"><span>Ultimate Weapons</span></a></li><li id="n-Oboro"><a href="https://www.bg-wiki.com/ffxi/Oboro"><span>Oboro</span></a></li><li id="n-Trust-Magic"><a href="https://www.bg-wiki.com/ffxi/Category:Trust"><span>Trust Magic</span></a></li><li id="n-Job-Specific-Equipment"><a href="https://www.bg-wiki.com/ffxi/Category:JSE"><span>Job Specific Equipment</span></a></li><li id="n-Curio-Moogles"><a href="https://www.bg-wiki.com/ffxi/Curio_Vendor_Moogle"><span>Curio Moogles</span></a></li><li id="n-Skirmish"><a href="https://www.bg-wiki.com/ffxi/Category:Skirmish"><span>Skirmish</span></a></li><li id="n-Alluvion-Skirmish"><a href="https://www.bg-wiki.com/ffxi/Category:Alluvion_Skirmish"><span>Alluvion Skirmish</span></a></li><li id="n-Records-of-Eminence"><a href="https://www.bg-wiki.com/ffxi/Category:Records_of_Eminence"><span>Records of Eminence</span></a></li><li id="n-Monstrosity"><a href="https://www.bg-wiki.com/ffxi/Category:Monstrosity"><span>Monstrosity</span></a></li><li id="n-Weakness-Procs"><a href="https://www.bg-wiki.com/ffxi/Weakness_Targeting"><span>Weakness Procs</span></a></li><li id="n-Delve"><a href="https://www.bg-wiki.com/ffxi/Category:Delve"><span>Delve</span></a></li><li id="n-Voidwatch"><a href="https://www.bg-wiki.com/ffxi/Category:Voidwatch"><span>Voidwatch</span></a></li><li id="n-Abjurations"><a href="https://www.bg-wiki.com/ffxi/Category:Abjurations"><span>Abjurations</span></a></li><li id="n-Abyssea"><a href="https://www.bg-wiki.com/ffxi/Category:Abyssea"><span>Abyssea</span></a></li><li id="n-Escutcheons"><a href="https://www.bg-wiki.com/ffxi/Category:Escutcheons"><span>Escutcheons</span></a></li><li id="n-Trial-of-the-Magians"><a href="https://www.bg-wiki.com/ffxi/Category:Trial_of_the_Magians"><span>Trial of the Magians</span></a></li></ul></div></div><div role="navigation" class="mw-portlet" id="p-Guides" aria-labelledby="p-Guides-label"><h3 id="p-Guides-label" lang="en" dir="ltr">Guides</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-Returning-to-Vana.27diel"><a href="https://www.bg-wiki.com/ffxi/Returning_to_Vana'diel"><span>Returning to Vana'diel</span></a></li><li id="n-1-119-Guide"><a href="https://www.bg-wiki.com/ffxi/Quickstart_1-119_Guide"><span>1-119 Guide</span></a></li><li id="n-Fantastic-EXPs"><a href="https://www.bg-wiki.com/ffxi/Fantastic_EXPs_and_Where_to_Find_Them"><span>Fantastic EXPs</span></a></li><li id="n-Adventurer-Campaigns"><a href="https://www.bg-wiki.com/ffxi/Category:Adventurer_Campaigns"><span>Adventurer Campaigns</span></a></li><li id="n-Guides-Directory"><a href="https://www.bg-wiki.com/ffxi/Category:Guides"><span>Guides Directory</span></a></li><li id="n-Job-Guides"><a href="https://www.bg-wiki.com/ffxi/Category:Job_Guides"><span>Job Guides</span></a></li></ul></div></div><div role="navigation" class="mw-portlet" id="p-Missions_.26_Quests" aria-labelledby="p-Missions_.26_Quests-label"><h3 id="p-Missions_.26_Quests-label" lang="en" dir="ltr">Missions &amp; Quests</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-Missions"><a href="https://www.bg-wiki.com/ffxi/Category:Missions"><span>Missions</span></a></li><li id="n-Quests"><a href="https://www.bg-wiki.com/ffxi/Category:Quests"><span>Quests</span></a></li><li id="n-History-and-Lore"><a href="https://www.bg-wiki.com/ffxi/Category:Lore"><span>History and Lore</span></a></li></ul></div></div><div role="navigation" class="mw-portlet" id="p-Vana.27diel" aria-labelledby="p-Vana.27diel-label"><h3 id="p-Vana.27diel-label" lang="en" dir="ltr">Vana'diel</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-Areas"><a href="https://www.bg-wiki.com/ffxi/Category:Areas"><span>Areas</span></a></li><li id="n-Transportation"><a href="https://www.bg-wiki.com/ffxi/Category:Transportation"><span>Transportation</span></a></li><li id="n-Home-Points"><a href="https://www.bg-wiki.com/ffxi/Home_Point"><span>Home Points</span></a></li><li id="n-Survival-Guides"><a href="https://www.bg-wiki.com/ffxi/Survival_Guide"><span>Survival Guides</span></a></li><li id="n-Bestiary"><a href="https://www.bg-wiki.com/ffxi/Category:Bestiary"><span>Bestiary</span></a></li></ul></div></div><div role="navigation" class="mw-portlet" id="p-Character_.26_Jobs" aria-labelledby="p-Character_.26_Jobs-label"><h3 id="p-Character_.26_Jobs-label" lang="en" dir="ltr">Character &amp; Jobs</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-Jobs"><a href="https://www.bg-wiki.com/ffxi/Category:Job-related"><span>Jobs</span></a></li><li id="n-Merits"><a href="https://www.bg-wiki.com/ffxi/Merit"><span>Merits</span></a></li><li id="n-Job-Points"><a href="https://www.bg-wiki.com/ffxi/Job_Points"><span>Job Points</span></a></li><li id="n-Skills"><a href="https://www.bg-wiki.com/ffxi/Category:Combat_Skills"><span>Skills</span></a></li><li id="n-Abilities"><a href="https://www.bg-wiki.com/ffxi/Category:Job_Ability"><span>Abilities</span></a></li><li id="n-Traits"><a href="https://www.bg-wiki.com/ffxi/Category:Job_Traits"><span>Traits</span></a></li><li id="n-Magic"><a href="https://www.bg-wiki.com/ffxi/Category:Spells"><span>Magic</span></a></li><li id="n-Weapon-Skills"><a href="https://www.bg-wiki.com/ffxi/Category:Weapon_Skills"><span>Weapon Skills</span></a></li></ul></div></div><div role="navigation" class="mw-portlet" id="p-Items" aria-labelledby="p-Items-label"><h3 id="p-Items-label" lang="en" dir="ltr">Items</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-Food"><a href="https://www.bg-wiki.com/ffxi/Food"><span>Food</span></a></li><li id="n-Weapons"><a href="https://www.bg-wiki.com/ffxi/Category:Weapon"><span>Weapons</span></a></li><li id="n-Armor"><a href="https://www.bg-wiki.com/ffxi/Category:Armor"><span>Armor</span></a></li><li id="n-Scrolls"><a href="https://www.bg-wiki.com/ffxi/Category:Scrolls"><span>Scrolls</span></a></li><li id="n-Furnishings"><a href="https://www.bg-wiki.com/ffxi/Furnishings"><span>Furnishings</span></a></li><li id="n-Materials"><a href="https://www.bg-wiki.com/ffxi/Category:Materials"><span>Materials</span></a></li><li id="n-Key-Items"><a href="https://www.bg-wiki.com/ffxi/Key_Item"><span>Key Items</span></a></li></ul></div></div></div></div><div id="site-tools" class="sidebar-chunk"><h2><span>Wiki tools</span></h2><div class="sidebar-inner"><div role="navigation" class="mw-portlet" id="p-tb" aria-labelledby="p-tb-label"><h3 id="p-tb-label" lang="en" dir="ltr">Wiki tools</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="t-specialpages"><a href="https://www.bg-wiki.com/ffxi/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q"><span>Special pages</span></a></li></ul></div></div></div></div></div><div id="mw-related-navigation"><div id="page-tools" class="sidebar-chunk"><h2><span>Page tools</span></h2><div class="sidebar-inner"><div role="navigation" class="mw-portlet emptyPortlet" id="p-cactions" aria-labelledby="p-cactions-label"><h3 id="p-cactions-label" lang="en" dir="ltr">Page tools</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"></ul></div></div><div role="navigation" class="mw-portlet emptyPortlet" id="p-userpagetools" aria-labelledby="p-userpagetools-label"><h3 id="p-userpagetools-label" lang="en" dir="ltr">Userpage tools</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"></ul></div></div><div role="navigation" class="mw-portlet" id="p-pagemisc" aria-labelledby="p-pagemisc-label"><h3 id="p-pagemisc-label" lang="en" dir="ltr">More</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="t-whatlinkshere"><a href="https://www.bg-wiki.com/ffxi/Special:WhatLinksHere/Version_Update_(11/19/2007)" title="A list of all wiki pages that link here [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked"><a href="https://www.bg-wiki.com/ffxi/Special:RecentChangesLinked/Version_Update_(11/19/2007)" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k"><span>Related changes</span></a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li><li id="t-permalink"><a href="https://www.bg-wiki.com/index.php?title=Version_Update_(11/19/2007)&amp;oldid=376587" title="Permanent link to this revision of the page"><span>Permanent link</span></a></li><li id="t-info"><a href="https://www.bg-wiki.com/index.php?title=Version_Update_(11/19/2007)&amp;action=info" title="More information about this page"><span>Page information</span></a></li><li id="t-pagelog"><a href="https://www.bg-wiki.com/index.php?title=Special:Log&amp;page=Version+Update+(11%2F19%2F2007)"><span>Page logs</span></a></li></ul></div></div></div></div><div id="catlinks-sidebar" class="sidebar-chunk"><h2><span>Categories</span></h2><div class="sidebar-inner"><div id="sidebar-normal-catlinks" class="mw-normal-catlinks"><div role="navigation" class="mw-portlet" id="p-normal-catlinks" aria-labelledby="p-normal-catlinks-label"><h3 id="p-normal-catlinks-label" lang="en" dir="ltr">Categories</h3><div class="mw-portlet-body"><ul><li><a href="https://www.bg-wiki.com/ffxi/Category:Update_History" title="Category:Update History">Update History</a></li></ul></div></div></div></div></div><div class="sidebar-chunk" style="text-align:center"><div id="bgwiki-sidebar"></div></div></div><div class="visualClear"></div></div></div><div id="mw-footer-container" class="mw-footer-container ts-container"><div id="mw-footer" class="mw-footer ts-inner"><div id="footer-bottom" class="mw-footer" role="contentinfo" lang="en" dir="ltr"><div id="f-poweredbyico" class="footer-icons"><a href="https://www.mediawiki.org/"><img src="../../../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../../../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../../../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy" /></a></div><ul id="f-list" class="footer-places"><li id="lastmod"> This page was last edited on 22 March 2014, at 16:47.</li><li id="privacy"><a href="https://www.bg-wiki.com/ffxi/BGWiki:Privacy_policy" title="BGWiki:Privacy policy">Privacy policy</a></li><li id="about"><a href="https://www.bg-wiki.com/ffxi/BGWiki:About" title="BGWiki:About">About FFXI Wiki</a></li><li id="disclaimer"><a href="https://www.bg-wiki.com/ffxi/BGWiki:General_disclaimer" title="BGWiki:General disclaimer">Disclaimers</a></li></ul><div class="visualClear"></div></div></div></div></div><script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.223","walltime":"0.225","ppvisitednodes":{"value":214,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20210525142627","ttl":259200,"transientcontent":false}}});});</script><script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":341});});</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"bf3936c99e","applicationID":"31775399","transactionName":"b1ZaZxRSXEYAB0MIXFYceVASWl1bTgVUFVpXXRdFD1ZF","queueTime":0,"applicationTime":39,"atts":"QxFZEVxIT0g=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

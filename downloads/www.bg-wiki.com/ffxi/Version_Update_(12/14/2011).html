@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"bf3936c99e",applicationID:"31775399"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<title>Version Update (12/14/2011) - FFXI Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"30670065f5c6af93ac994d08","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Version_Update_(12/14/2011)","wgTitle":"Version Update (12/14/2011)","wgCurRevisionId":208572,"wgRevisionId":208572,"wgArticleId":85182,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Update History"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Version_Update_(12/14/2011)","wgRelevantArticleId":85182,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":["sysop"],"wgRestrictionMove":["sysop"]};
+RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mediawiki.toc.styles":"ready","mediawiki.skinning.content.externallinks":"ready","skins.timeless":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.timeless.js","skins.timeless.mobile"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="../../../load.php@lang=en&amp;modules=mediawiki.skinning.content.externallinks%257Cmediawiki.toc.styles%257Cskins.timeless&amp;only=styles&amp;skin=timeless.css" />
+<script async="" src="../../../load.php@lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=timeless"></script>
+<!--[if IE]><link rel="stylesheet" href="/skins/Timeless/resources/IE9fixes.css?ffe73" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../load.php@lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=timeless.css" />
+<meta name="generator" content="MediaWiki 1.35.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0" />
+<link rel="shortcut icon" href="../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.bg-wiki.com/opensearch_desc.php" title="FFXI Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.bg-wiki.com/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="FFXI Wiki Atom feed" href="https://www.bg-wiki.com/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="2011).html" />
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"\/\/www.bg-wiki.com\/ffxi\/Version_Update_(12\/14\/2011)"},"author":{"@type":"Person","name":"Septimus"},"headline":"Version Update (12\/14\/2011)","dateCreated":"2011-12-14T18:40:08-05:00","datePublished":"2011-12-14T18:40:08-05:00","dateModified":"2021-03-03T22:58:58-05:00","discussionUrl":"\/\/www.bg-wiki.com\/Talk:Version Update (12\/14\/2011)","image":{"@type":"ImageObject","url":"\/\/www.bg-wiki.com\/images\/b\/bd\/Update12-14-2011_0.jpg","height":180,"width":240},"publisher":{"@type":"Organization","name":"FFXI Wiki","logo":{"@type":"ImageObject","url":"\/\/www.bg-wiki.com\/bgwiki.png"}},"description":"Version Update (12\/14\/2011)"}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","url":"\/\/www.bg-wiki.com","potentialAction":{"@type":"SearchAction","target":"\/\/www.bg-wiki.com\/index.php?search={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3274340-3"></script>
+<script>
+					  window.dataLayer = window.dataLayer || [];
+					  function gtag(){dataLayer.push(arguments);}
+					  gtag('js', new Date());
+					
+					  gtag('config', 'UA-3274340-3');
+					</script>
+<script type="text/javascript">
+					window['nitroAds'] = window['nitroAds'] || { createAd: function () { window.nitroAds.queue.push(["createAd", arguments]) }, queue: [] };
+					</script>
+<script async src="https://s.nitropay.com/ads-154.js"></script>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Version_Update_12_14_2011 rootpage-Version_Update_12_14_2011 skin-timeless action-view"><div id="mw-wrapper"><div id="mw-header-container" class="ts-container"><div id="mw-header" class="ts-inner"><div id="user-tools"><div id="personal"><h2><span>Anonymous</span></h2><div id="personal-inner" class="dropdown"><div role="navigation" class="mw-portlet" id="p-personal" aria-labelledby="p-personal-label"><h3 id="p-personal-label" lang="en" dir="ltr">Not logged in</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="pt-login"><a href="https://www.bg-wiki.com/index.php?title=Special:UserLogin&amp;returnto=Version+Update+(12%2F14%2F2011)" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o"><span>Log in</span></a></li></ul></div></div></div></div></div><div id="p-logo-text" class="mw-portlet" role="banner"><a id="p-banner" class="mw-wiki-title" href="https://www.bg-wiki.com/ffxi/Main_Page">FFXI Wiki</a></div><div class="mw-portlet" id="p-search"><h3 lang="en" dir="ltr"><label for="searchInput">Search</label></h3><form action="https://www.bg-wiki.com/index.php" id="searchform"><div id="simpleSearch"><div id="searchInput-container"><input type="search" name="search" placeholder="Search FFXI Wiki" title="Search FFXI Wiki [f]" accesskey="f" id="searchInput" /></div><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" /></div></form></div></div><div class="visualClear"></div></div><div id="mw-header-hack" class="color-bar"><div class="color-middle-container"><div class="color-middle"></div></div><div class="color-left"></div><div class="color-right"></div></div><div id="mw-header-nav-hack"><div class="color-bar"><div class="color-middle-container"><div class="color-middle"></div></div><div class="color-left"></div><div class="color-right"></div></div></div><div id="menus-cover"></div><div id="mw-content-container" class="ts-container"><div id="mw-content-block" class="ts-inner"><div id="mw-content-wrapper"><div id="mw-content"><div id="content" class="mw-body" role="main"><div style="text-align: center;">
+<div id="bgwiki-leaderboard"></div>
+<script type="text/javascript">
+				            window['nitroAds'].createAd('bgwiki-leaderboard', {
+				                "refreshLimit": 10,
+				                "refreshTime": 60,
+							    "renderVisibleOnly": true,
+   							    "refreshVisibleOnly": true,						      
+						        "mediaQuery": "(min-width: 748px)",
+				                "sizes": [
+				                    [
+				                        728,
+				                        90
+				                    ]
+				                ]
+				            });
+				        </script>
+</div><div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><div style="overflow:auto;">
+<table style="width: 100%; max-width: 1800px; min-width: 1300px; vertical-align: center; margin: auto;">
+<tbody><tr>
+<td style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: center; padding-left:1em; padding-right:1em; padding: 2px; text-align: center; font-weight: bold; width: 65%;"><img alt="Battle Content" src="../../../images/thumb/b/bc/BGBattle_Content_logo.png/160px-BGBattle_Content_logo.png" decoding="async" title="Battle Content" width="160" height="21" srcset="../../../images/thumb/b/bc/BGBattle_Content_logo.png/240px-BGBattle_Content_logo.png 1.5x, ../../../images/thumb/b/bc/BGBattle_Content_logo.png/320px-BGBattle_Content_logo.png 2x" /><br /><a href="https://www.bg-wiki.com/ffxi/Category:A.M.A.N._Trove" title="Category:A.M.A.N. Trove">A.M.A.N. Trove</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Ambuscade" title="Category:Ambuscade">Ambuscade</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Delve" class="mw-redirect" title="Delve">Delve</a> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Dynamis_Divergence" class="mw-redirect" title="Dynamis Divergence">Dynamis Divergence</a></span> &#8226; <a href="https://www.bg-wiki.com/ffxi/Geas_Fete" class="mw-redirect" title="Geas Fete">Geas Fete</a> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:High-Tier_Mission_Battlefields" title="Category:High-Tier Mission Battlefields">High-Tier Mission Battlefields</a></span> &#8226; <a href="https://www.bg-wiki.com/ffxi/Incursion" class="mw-redirect" title="Incursion">Incursion</a> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Master_Trials" title="Category:Master Trials">Master Trials</a></span> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Monstrosity" title="Category:Monstrosity">Monstrosity</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Odyssey" class="mw-redirect" title="Odyssey">Odyssey</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Omen" class="mw-redirect" title="Omen">Omen</a> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Sinister_Reign" class="mw-redirect" title="Sinister Reign">Sinister Reign</a></span> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Skirmish" title="Category:Skirmish">Skirmish</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Unity" class="mw-redirect" title="Unity">Unity</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Vagary" class="mw-redirect" title="Vagary">Vagary</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Voidwatch" class="mw-redirect" title="Voidwatch">Voidwatch</a>
+</td>
+<td rowspan="2" style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: top; padding-left:1em; padding-right:1em; padding: 2px; text-align: center; font-weight: bold; width: 35%;"><a href="https://www.bg-wiki.com/ffxi/Category:Missions" title="Category:Missions"><img alt="BG Missions Logo 1.png" src="../../../images/thumb/8/85/BG_Missions_Logo_1.png/115px-BG_Missions_Logo_1.png" decoding="async" width="115" height="33" srcset="../../../images/thumb/8/85/BG_Missions_Logo_1.png/173px-BG_Missions_Logo_1.png 1.5x, ../../../images/thumb/8/85/BG_Missions_Logo_1.png/230px-BG_Missions_Logo_1.png 2x" /></a><br /><span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:The_Voracious_Resurgence_Missions" title="Category:The Voracious Resurgence Missions">The Voracious Resurgence</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Rhapsodies_of_Vanadiel_Missions" title="Category:Rhapsodies of Vanadiel Missions">Rhapsodies of Vanadiel</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Seekers_of_Adoulin_Missions" title="Category:Seekers of Adoulin Missions">Seekers of Adoulin</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Wings_of_the_Goddess_Missions" title="Category:Wings of the Goddess Missions">Wings of the Goddess</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Aht_Urhgan_Missions" title="Category:Aht Urhgan Missions">Treasures of Aht Urhgan</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Promathia_Missions" title="Category:Promathia Missions">Chains of Promathia</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Zilart_Missions" title="Category:Zilart Missions">Rise of the Zilart</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Bastok_Missions" title="Category:Bastok Missions">Bastok</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:San_d'Oria_Missions" title="Category:San d&#39;Oria Missions">San d'Oria</a></span> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Category:Windurst_Missions" title="Category:Windurst Missions">Windurst</a></span>
+</td></tr>
+<tr>
+<td style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: center; padding-left:1em; padding-right:1em; padding: 2px; text-align: center;">
+<table style="width: 100%; text-align: center;">
+<tbody><tr>
+<td><b><span style="font-size: 15px;"><a href="https://www.bg-wiki.com/ffxi/Reforged_Armor" class="mw-redirect" title="Reforged Armor">Reforged Armor</a></span></b><br /><span style="white-space: nowrap;"><b>Artifact:</b> <a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Artifact_Armor" title="Category:Reforged Artifact Armor">iL109</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Artifact_Armor_%2B1" title="Category:Reforged Artifact Armor +1">iL119</a>/<a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Artifact_Armor_%2B2" title="Category:Reforged Artifact Armor +2">+2</a>/<a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Artifact_Armor_%2B3" title="Category:Reforged Artifact Armor +3">+3</a></span> &#160;&#160;&#160; <span style="white-space: nowrap;"><b>Relic</b>: <a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Relic_Armor" title="Category:Reforged Relic Armor">iL109</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Relic_Armor_%2B1" title="Category:Reforged Relic Armor +1">iL119</a>/<a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Relic_Armor_%2B2" title="Category:Reforged Relic Armor +2">+2</a>/<a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Relic_Armor_%2B3" title="Category:Reforged Relic Armor +3">+3</a></span> &#160;&#160;&#160; <span style="white-space: nowrap;"><b>Empyrean</b>: <a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Empyrean_Armor" title="Category:Reforged Empyrean Armor">iL109</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Reforged_Empyrean_Armor_%2B1" title="Category:Reforged Empyrean Armor +1">iL119</a></span>
+</td>
+<td><b><a href="https://www.bg-wiki.com/ffxi/Category:Abjurations#Abjuration_Sets_.28Escha_-_Ru.27Aun.29" title="Category:Abjurations">Abjurations iL119</a> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Superior_Equipment" class="mw-redirect" title="Superior Equipment">Superior Equipment</a></span></b><br /><b><a href="https://www.bg-wiki.com/ffxi/JSE_Necks" class="mw-redirect" title="JSE Necks">JSE Necks</a> &#8226; <span style="white-space: nowrap;"><a href="https://www.bg-wiki.com/ffxi/Dynamis_Divergence_Weapon_Augments" title="Dynamis Divergence Weapon Augments">Divergence Weapon Augments</a></span></b>
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: center; padding-left:1em; padding-right:1em; padding: 2px; font-weight: bold; text-align: center;"><a href="https://www.bg-wiki.com/ffxi/Category:Ultimate_Weapons" title="Category:Ultimate Weapons">Ultimate Weapons</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Ultimate_Weapon_Augments" class="mw-redirect" title="Ultimate Weapon Augments">Ultimate Weapon Augments</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Escutcheons" title="Category:Escutcheons">Escutcheons</a>
+</td>
+<td style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: center; padding-left:1em; padding-right:1em; padding: 2px; text-align: center;"><a href="https://www.bg-wiki.com/ffxi/Repeat_Login_Campaign#Current_Login_Campaign" title="Current Login Campaign"><img alt="Current Login Campaign" src="../../../images/thumb/a/af/Login_logo1.png/70px-Login_logo1.png" decoding="async" width="70" height="21" srcset="../../../images/thumb/a/af/Login_logo1.png/105px-Login_logo1.png 1.5x, ../../../images/thumb/a/af/Login_logo1.png/140px-Login_logo1.png 2x" /></a> <a href="https://www.bg-wiki.com/ffxi/Repeat_Login_Campaign#Current_Login_Campaign" title="Current Login Campaign"><img alt="Current Login Campaign" src="../../../images/thumb/8/84/Login_logo2.png/120px-Login_logo2.png" decoding="async" width="120" height="19" srcset="../../../images/thumb/8/84/Login_logo2.png/180px-Login_logo2.png 1.5x, ../../../images/thumb/8/84/Login_logo2.png/240px-Login_logo2.png 2x" /></a>
+</td></tr>
+<tr>
+<td style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: center; padding-left:1em; padding-right:1em; padding: 2px; text-align: center; font-weight: bold;"><a href="https://www.bg-wiki.com/ffxi/Guides" class="mw-redirect" title="Guides">Guides</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Crafting" class="mw-redirect" title="Crafting">Crafting</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Trust" title="Category:Trust">Trust Magic</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Job_Points" title="Job Points">Job Points</a> &#8226; <a href="https://www.bg-wiki.com/ffxi/Category:Apex_Monster" title="Category:Apex Monster">Apex Monsters</a>
+</td>
+<td style="background: #F5FAFF; border: 1px solid #86C1FF; vertical-align: center; padding-left:1em; padding-right:1em; padding: 2px; text-align: center;"><b><a href="https://www.bg-wiki.com/ffxi/Latest_Version_Update" class="mw-redirect" title="Latest Version Update">Latest Update Items</a></b>
+</td></tr></tbody></table>
+</div></div></div><div class="mw-indicators mw-body-content">
+</div>
+<h1 id="firstHeading" class="firstHeading">Version Update (12/14/2011)</h1><div id="bodyContentOuter"><div id="siteSub">From FFXI Wiki</div><div id="mw-page-header-links"><div role="navigation" class="mw-portlet tools-inline" id="p-namespaces" aria-labelledby="p-namespaces-label"><h3 id="p-namespaces-label" lang="en" dir="ltr">Namespaces</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="ca-nstab-main" class="selected"><a href="2011).html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="new"><a href="https://www.bg-wiki.com/index.php?title=Talk:Version_Update_(12/14/2011)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li></ul></div></div><div role="navigation" class="mw-portlet tools-inline" id="p-more" aria-labelledby="p-more-label"><h3 id="p-more-label" lang="en" dir="ltr">More</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="ca-more" class="dropdown-toggle"><span>More</span></li><li id="ca-languages" class="dropdown-toggle"><span>Languages</span></li></ul></div></div><div role="navigation" class="mw-portlet tools-inline" id="p-views" aria-labelledby="p-views-label"><h3 id="p-views-label" lang="en" dir="ltr">Page actions</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="ca-view" class="selected"><a href="2011).html"><span>Read</span></a></li><li id="ca-viewsource"><a href="https://www.bg-wiki.com/index.php?title=Version_Update_(12/14/2011)&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e"><span>View source</span></a></li><li id="ca-history"><a href="https://www.bg-wiki.com/index.php?title=Version_Update_(12/14/2011)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>History</span></a></li></ul></div></div></div><div class="visualClear"></div><div class="mw-body-content" id="bodyContent"><div id="contentSub"></div><div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="2011).html#Event-related"><span class="tocnumber">1</span> <span class="toctext">Event-related</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="2011).html#Battle-related"><span class="tocnumber">2</span> <span class="toctext">Battle-related</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="2011).html#Item-related"><span class="tocnumber">3</span> <span class="toctext">Item-related</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="2011).html#System-related"><span class="tocnumber">4</span> <span class="toctext">System-related</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="2011).html#.5BWindows_and_Xbox_360-only_updates.5D"><span class="tocnumber">5</span> <span class="toctext">[Windows and Xbox 360-only updates]</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="2011).html#.5BWindow-only_updates.5D"><span class="tocnumber">6</span> <span class="toctext">[Window-only updates]</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="2011).html#.5BEnglish-language_version_only.5D"><span class="tocnumber">7</span> <span class="toctext">[English-language version only]</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="2011).html#Known_Issues"><span class="tocnumber">8</span> <span class="toctext">Known Issues</span></a></li>
+</ul>
+</div>
+<br /><div align="center" id="bgwiki-toc-medrec"></div><br />
+<table width="700" border="1">
+<tbody><tr>
+<td>December 14, 2011 Version Update
+<h2><span class="mw-headline" id="Event-related">Event-related</span></h2>
+<ul><li>[dev1039] Voidwatch: Third Chapter</li></ul>
+<dl><dd><ul><li>The third chapter of the Voidwatch battle system has been introduced.</li></ul>
+<dl><dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_0.jpg" class="image"><img alt="Update12-14-2011 0.jpg" src="../../../images/b/bd/Update12-14-2011_0.jpg" decoding="async" width="240" height="180" /></a><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_1.jpg" class="image"><img alt="Update12-14-2011 1.jpg" src="../../../images/f/f2/Update12-14-2011_1.jpg" decoding="async" width="240" height="180" /></a></dd></dl>
+<ul><li>VNMs now possess an extra weakness.</li>
+<li>These weaknesses may only be triggered once per battle, and exploiting them will increase all spectral alignment values to their maximum level.</li>
+<li>Synchronic Blitz now yields additional bonuses.</li>
+<li>Players will now receive spectral alignment bonuses based on the number of times their weapon skills, abilities, or magic attacks strike an enemy during a synchronic blitz.</li>
+<li>New varieties of atmacite and abyssite have been added.</li>
+<li>A new key item, the periapt of clarity, has been added.</li>
+<li>Bearers of this periapt and the periapt of percipience are granted insight into the magic type (white magic, black magic, blue magic, bard songs, ninjutsu) and element of their Voidwalker foe's weakness.</li>
+<li>When infusing atmacite, players will be given the option to replace the selected atmacite after confirming its effects.</li>
+<li>The glossary of game terms on the official homepage has been updated with the latest Voidwatch terminology.</li></ul></dd></dl>
+<ul><li>[dev1038] New Walk of Echoes Battlefields</li></ul>
+<dl><dd><ul><li>Walks twelve through fifteen of the Walk of Echoes have been unlocked.</li></ul>
+<dl><dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_2.jpg" class="image"><img alt="Update12-14-2011 2.jpg" src="../../../images/c/c5/Update12-14-2011_2.jpg" decoding="async" width="240" height="180" /></a><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_3.jpg" class="image"><img alt="Update12-14-2011 3.jpg" src="../../../images/0/03/Update12-14-2011_3.jpg" decoding="async" width="240" height="180" /></a></dd></dl></dd></dl>
+<ul><li>[dev1044] New Magian Trials</li></ul>
+<dl><dd><ul><li>New weapon upgrade trials have been introduced to the current trial list.</li>
+<li>Relic and Relic +1 Armor will be upgradable via Trial of the Magians.</li></ul>
+<dl><dd><ul><li>Two upgrade stages are available, each offering the following augmented attributes:</li></ul>
+<dl><dd><ul><li>Stage 1: Item-related augments</li>
+<li>Stage 2: Merit point-related augments</li></ul></dd>
+<dd><font color="#FF0000">*Players will still be able to undertake these trials even if no information for them is displayed.</font></dd></dl>
+<ul><li>Upgraded armor pieces will have a higher level requirement than their base forms.</li>
+<li>Armor pieces upgraded to Stage 2 will be storable with the Porter Moogle service.</li></ul>
+<dl><dd><font color="#FF0000">*Relic and Relic +1 Armor will result in the same items after upgrading. Owners of Relic +1 Armor will be rewarded with less demanding conditions for the first upgrade stage.</font></dd></dl></dd></dl></dd></dl>
+<ul><li>[dev1036] Gobbie Mystery Box</li></ul>
+<dl><dd><ul><li>Players will be able to accrue Daily Tally points that may be exchanged for random awards via the Goblins below.</li></ul>
+<dl><dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_4.jpg" class="image"><img alt="Update12-14-2011 4.jpg" src="../../../images/7/77/Update12-14-2011_4.jpg" decoding="async" width="240" height="180" /></a>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Port_San_d'Oria" title="Port San d&#39;Oria">Port San d'Oria</a> (I-10) / <a href="https://www.bg-wiki.com/ffxi/Habitox" title="Habitox">Habitox</a></li>
+<li><a href="https://www.bg-wiki.com/ffxi/Port_Bastok" title="Port Bastok">Port Bastok</a> (I-12) / <a href="https://www.bg-wiki.com/ffxi/Bountibox" title="Bountibox">Bountibox</a></li>
+<li><a href="https://www.bg-wiki.com/ffxi/Windurst_Walls" title="Windurst Walls">Windurst Walls</a> (C-14) / <a href="https://www.bg-wiki.com/ffxi/Arbitrix" title="Arbitrix">Arbitrix</a></li>
+<li><a href="https://www.bg-wiki.com/ffxi/Batallia_Downs" title="Batallia Downs">Batallia Downs</a> (K-8) / <a href="https://www.bg-wiki.com/ffxi/Sweepstox" title="Sweepstox">Sweepstox</a></li>
+<li><a href="https://www.bg-wiki.com/ffxi/Bhaflau_Thickets" title="Bhaflau Thickets">Bhaflau Thickets</a> (J-9) / <a href="https://www.bg-wiki.com/ffxi/Wondrix" title="Wondrix">Wondrix</a></li></ul></dd></dl>
+<ul><li>Once you have spoken to one of the Goblins above, points will be added to your Daily Tally every Earth day at 12:00am (JST).</li>
+<li>You will be able to select from five different point amounts that you would like to expend at once, and the reward will vary depending on the amount selected.</li>
+<li>Your Daily Tally can be increased by trading unneeded rare items to the Goblins.</li></ul></dd>
+<dd><font color="#FF0000">*There will be a cap on the amount of points you can earn in a single Earth day from trading items.</font></dd></dl>
+<ul><li>[dev1061] Grounds of Valor Adjustments</li></ul>
+<dl><dd><ul><li>The following areas have been added:</li></ul></dd></dl>
+<dl><dd><dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Lower_Delkfutt's_Tower" title="Lower Delkfutt&#39;s Tower">Lower Delkfutt's Tower</a> / <a href="https://www.bg-wiki.com/ffxi/Middle_Delkfutt's_Tower" title="Middle Delkfutt&#39;s Tower">Middle Delkfutt's Tower</a> / <a href="https://www.bg-wiki.com/ffxi/Upper_Delkfutt's_Tower" title="Upper Delkfutt&#39;s Tower">Upper Delkfutt's Tower</a> / <a href="https://www.bg-wiki.com/ffxi/Temple_of_Uggalepih" title="Temple of Uggalepih">Temple of Uggalepih</a> / <a href="https://www.bg-wiki.com/ffxi/Den_of_Rancor" title="Den of Rancor">Den of Rancor</a> / <a href="https://www.bg-wiki.com/ffxi/Sea_Serpent_Grotto" title="Sea Serpent Grotto">Sea Serpent Grotto</a> / <a href="https://www.bg-wiki.com/ffxi/Quicksand_Caves" title="Quicksand Caves">Quicksand Caves</a></li></ul>
+<dl><dd><font color="#FF0000">*Treasure caskets will also appear in the following areas.</font></dd>
+<dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_5.jpg" class="image"><img alt="Update12-14-2011 5.jpg" src="../../../images/c/c8/Update12-14-2011_5.jpg" decoding="async" width="240" height="180" /></a></dd></dl></dd></dl></dd></dl>
+<ul><li>[dev1050] Adventuring Fellows: Level 95 Unlocked</li>
+<li>The level cap for adventuring fellows has been raised from 90 to 95. Completion of a fellow limit break quest is required to unlock level 91 and higher.</li></ul>
+<ul><li>[dev1034] The amount of experience and Allied Notes earned from successful Campaign operations has been increased.</li></ul>
+<ul><li>[dev1043] The waiting period between chocobo race entries has been lowered from 24 hours to 20 hours.</li></ul>
+<ul><li>[dev1031] It is now possible to warp from an outpost to your nation of allegiance using either gil or conquest points.</li></ul>
+<ul><li>The NPC <a href="https://www.bg-wiki.com/ffxi/Domenic" title="Domenic">Domenic</a> in <a href="https://www.bg-wiki.com/ffxi/Lower_Jeuno" title="Lower Jeuno">Lower Jeuno</a> (J-7) can now teleport players to the following battlefields for a set price:</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Ghelsba_Outpost" title="Ghelsba Outpost">Ghelsba Outpost</a> / <a href="https://www.bg-wiki.com/ffxi/Horlais_Peak" title="Horlais Peak">Horlais Peak</a> / <a href="https://www.bg-wiki.com/ffxi/Waughroon_Shrine" title="Waughroon Shrine">Waughroon Shrine</a> / <a href="https://www.bg-wiki.com/ffxi/Balga's_Dais" title="Balga&#39;s Dais">Balga's Dais</a> / <a href="https://www.bg-wiki.com/ffxi/Qu'Bia_Arena" title="Qu&#39;Bia Arena">Qu'Bia Arena</a></li></ul>
+<dl><dd><font color="#FF0000">*Completion of the quest "<a href="https://www.bg-wiki.com/ffxi/Beyond_Infinity" title="Beyond Infinity">Beyond Infinity</a>" is mandatory in order to be transported.</font></dd></dl></dd></dl>
+<ul><li>[dev1032] It is now more likely that the key item <a href="https://www.bg-wiki.com/ffxi/Clear_demilune_abyssite" title="Clear demilune abyssite">Clear demilune abyssite</a> will evolve into <a href="https://www.bg-wiki.com/ffxi/Colorful_demilune_abyssite" title="Colorful demilune abyssite">Colorful demilune abyssite</a>.</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Battle-related">Battle-related</span></h2>
+<ul><li>[dev1042] Level Cap Increase</li>
+<li>The maximum job level for player characters has been increased to 99. Players must complete the quest "<a href="https://www.bg-wiki.com/ffxi/Beyond_Infinity" title="Beyond Infinity">Beyond Infinity</a>" offered by the <a href="https://www.bg-wiki.com/ffxi/Nomad_Moogle" title="Nomad Moogle">Nomad Moogle</a> NPC in <a href="https://www.bg-wiki.com/ffxi/Ru'Lude_Gardens" title="Ru&#39;Lude Gardens">Ru'Lude Gardens</a> to unlock levels 96 and above.</li></ul>
+<dl><dd><dl><dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_6.jpg" class="image"><img alt="Update12-14-2011 6.jpg" src="../../../images/2/21/Update12-14-2011_6.jpg" decoding="async" width="240" height="180" /></a><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_7.jpg" class="image"><img alt="Update12-14-2011 7.jpg" src="../../../images/5/58/Update12-14-2011_7.jpg" decoding="async" width="240" height="180" /></a></dd></dl></dd></dl>
+<ul><li>[dev1040] Merit Point Adjustments</li></ul>
+<dl><dd><ul><li>The maximum number of storable merit points has been increased from 20 to 30.</li>
+<li>The maximum number of upgrades has been increased for the following categories:</li></ul></dd></dl>
+<dl><dd><dl><dd><ul><li>HP/MP: Increased from 12 to 15</li>
+<li>Attributes: Increased from 8 to 12</li></ul></dd></dl></dd></dl>
+<ul><li>The following new job abilities have been added:</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Summoner" title="Summoner">Summoner</a></li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Fenrir" class="mw-redirect" title="Fenrir">Fenrir</a>: <a href="https://www.bg-wiki.com/ffxi/Heavenward_Howl" title="Heavenward Howl">Heavenward Howl</a> (Lv. 96)</li></ul>
+<dl><dd>Grants the effect of HP Drain or MP Drain to party members within area of effect.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Diabolos" class="mw-redirect" title="Diabolos">Diabolos</a>: <a href="https://www.bg-wiki.com/ffxi/Pavor_Nocturnus" title="Pavor Nocturnus">Pavor Nocturnus</a> (Lv. 98)</li></ul>
+<dl><dd>Lures an enemy into an eternal nightmare.</dd>
+<dd><font color="#FF0000">*If the enemy is not lured into an eternal nightmare, will give an effect of Dispel instead.</font></dd>
+<dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_8.jpg" class="image"><img alt="Update12-14-2011 8.jpg" src="../../../images/9/92/Update12-14-2011_8.jpg" decoding="async" width="240" height="180" /></a></dd></dl></dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Corsair" title="Corsair">Corsair</a></li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Avenger's_Roll" title="Avenger&#39;s Roll">Avenger's Roll</a> (Lv. 97)</li></ul>
+<dl><dd>Increases chance of countering for party members within area of effect. Lucky Number: 4. Unlucky Number: 8.</dd></dl></dd></dl></dd></dl>
+<ul><li>The following magic spells have been introduced:</li></ul>
+<dl><dd><ul><li>White Magic</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Cura_III" title="Cura III">Cura III</a> (<a href="https://www.bg-wiki.com/ffxi/WHM" class="mw-redirect" title="WHM">WHM</a> Lv.96)</li></ul>
+<dl><dd>Restores HP for party members within area of effect. Afflatus Misery: Increases healing potency.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Boost-INT" title="Boost-INT">Boost-INT</a> (<a href="https://www.bg-wiki.com/ffxi/WHM" class="mw-redirect" title="WHM">WHM</a> Lv.96)</li></ul>
+<dl><dd>Enhances Intelligence for party members within area of effect.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Boost-DEX" title="Boost-DEX">Boost-DEX</a> (<a href="https://www.bg-wiki.com/ffxi/WHM" class="mw-redirect" title="WHM">WHM</a> Lv.99)</li></ul>
+<dl><dd>Enhances Dexterity for party members within area of effect.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Gain-INT" title="Gain-INT">Gain-INT</a> (<a href="https://www.bg-wiki.com/ffxi/RDM" class="mw-redirect" title="RDM">RDM</a> Lv.96)</li></ul>
+<dl><dd>Enhances Intelligence.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Gain-DEX" title="Gain-DEX">Gain-DEX</a> (<a href="https://www.bg-wiki.com/ffxi/RDM" class="mw-redirect" title="RDM">RDM</a> Lv.99)</li></ul>
+<dl><dd>Enhances Dexterity.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Regen_V" title="Regen V">Regen V</a> (<a href="https://www.bg-wiki.com/ffxi/SCH" class="mw-redirect" title="SCH">SCH</a> Lv.99)</li></ul>
+<dl><dd>Gradually restores target's HP.</dd>
+<dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_9.jpg" class="image"><img alt="Update12-14-2011 9.jpg" src="../../../images/c/cb/Update12-14-2011_9.jpg" decoding="async" width="240" height="180" /></a></dd></dl></dd></dl>
+<ul><li>Black Magic</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Thundaja" title="Thundaja">Thundaja</a> (<a href="https://www.bg-wiki.com/ffxi/BLM" class="mw-redirect" title="BLM">BLM</a> Lv.96)</li></ul>
+<dl><dd>Deals thunder damage to enemies within area of effect. Successive use enhances spell potency.</dd>
+<dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_10.jpg" class="image"><img alt="Update12-14-2011 10.jpg" src="../../../images/1/11/Update12-14-2011_10.jpg" decoding="async" width="240" height="180" /></a></dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Gravity_II" title="Gravity II">Gravity II</a> (<a href="https://www.bg-wiki.com/ffxi/RDM" class="mw-redirect" title="RDM">RDM</a> Lv. 98)</li></ul>
+<dl><dd>Weighs an enemy down and lowers its movement speed.</dd></dl></dd></dl>
+<ul><li>Songs</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Lightning_Carol_II" title="Lightning Carol II">Lightning Carol II</a> (<a href="https://www.bg-wiki.com/ffxi/BRD" class="mw-redirect" title="BRD">BRD</a> Lv.96)</li></ul>
+<dl><dd>Increases resistance against lightning and sometimes nullifies lightning damage for party members within area of effect.</dd>
+<dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_11.jpg" class="image"><img alt="Update12-14-2011 11.jpg" src="../../../images/3/31/Update12-14-2011_11.jpg" decoding="async" width="240" height="180" /></a></dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Light_Carol_II" title="Light Carol II">Light Carol II</a> (<a href="https://www.bg-wiki.com/ffxi/BRD" class="mw-redirect" title="BRD">BRD</a> Lv.99)</li></ul>
+<dl><dd>Increases resistance against light and sometimes nullifies light damage for party members within area of effect.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Dark_Carol_II" title="Dark Carol II">Dark Carol II</a> (<a href="https://www.bg-wiki.com/ffxi/BRD" class="mw-redirect" title="BRD">BRD</a> Lv.99)</li></ul>
+<dl><dd>Increases resistance against darkness and sometimes nullifies darkness damage for party members within area of effect.</dd></dl></dd></dl></dd></dl>
+<ul><li>The following spells have been made available to new jobs:</li></ul>
+<dl><dd><ul><li>White Magic</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Holy_II" title="Holy II">Holy II</a> (<a href="https://www.bg-wiki.com/ffxi/PLD" class="mw-redirect" title="PLD">PLD</a> Lv.99)</li>
+<li><a href="https://www.bg-wiki.com/ffxi/Regen_IV" title="Regen IV">Regen IV</a> (<a href="https://www.bg-wiki.com/ffxi/SCH" class="mw-redirect" title="SCH">SCH</a> Lv.79)</li></ul></dd></dl>
+<ul><li>Black Magic</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Thunder_III" title="Thunder III">Thunder III</a> (<a href="https://www.bg-wiki.com/ffxi/DRK" class="mw-redirect" title="DRK">DRK</a> Lv.96)</li>
+<li><a href="https://www.bg-wiki.com/ffxi/Thunder_V" title="Thunder V">Thunder V</a> (<a href="https://www.bg-wiki.com/ffxi/SCH" class="mw-redirect" title="SCH">SCH</a> Lv.99 <a href="https://www.bg-wiki.com/ffxi/Addendum:_Black" title="Addendum: Black">Addendum: Black</a>)</li>
+<li><a href="https://www.bg-wiki.com/ffxi/Aspir_II" title="Aspir II">Aspir II</a> (<a href="https://www.bg-wiki.com/ffxi/SCH" class="mw-redirect" title="SCH">SCH</a> Lv.97)</li></ul></dd></dl></dd></dl>
+<ul><li>The following spells are now learnable by blue mages:</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Quadrastrike" title="Quadrastrike">Quadrastrike</a></li></ul>
+<dl><dd>Delivers a fourfold attack. Chance of critical hit varies with TP.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Vapor_Spray" title="Vapor Spray">Vapor Spray</a></li></ul>
+<dl><dd>Deals water breath damage to enemies within a fan-shaped area originating from the caster. Additional effect: Poison.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Thunder_Breath" title="Thunder Breath">Thunder Breath</a></li></ul>
+<dl><dd>Deals thunder breath damage to enemies within a fan-shaped area originating from the caster.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Orcish_Counterstance" class="mw-redirect" title="Orcish Counterstance">Orcish Counterstance</a></li></ul>
+<dl><dd>Increases the caster's chance of countering.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Amorphic_Spikes" title="Amorphic Spikes">Amorphic Spikes</a></li></ul>
+<dl><dd>Delivers a fivefold attack. Damage varies with TP.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Wind_Breath" title="Wind Breath">Wind Breath</a></li></ul>
+<dl><dd>Deals wind breath damage to enemies within a fan-shaped area originating from the caster.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Barbed_Crescent" title="Barbed Crescent">Barbed Crescent</a></li></ul>
+<dl><dd>Damage varies with TP. Additional effect: Accuracy Down.</dd></dl></dd></dl>
+<ul><li>Blue magic spells requiring <a href="https://www.bg-wiki.com/ffxi/Unbridled_Knowledge" class="mw-redirect" title="Unbridled Knowledge">Unbridled Knowledge</a>:</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Absolute_Terror" title="Absolute Terror">Absolute Terror</a></li></ul>
+<dl><dd>Freezes target in fear.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Gates_of_Hades" title="Gates of Hades">Gates of Hades</a></li></ul>
+<dl><dd>Deals fire damage to enemies within area of effect. Additional effect: Burn.</dd>
+<dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_12.jpg" class="image"><img alt="Update12-14-2011 12.jpg" src="../../../images/1/11/Update12-14-2011_12.jpg" decoding="async" width="240" height="180" /></a></dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Tourbillion" title="Tourbillion">Tourbillion</a></li></ul>
+<dl><dd>Delivers an area attack. Additional effect duration varies with TP. Additional effect: Weakens defense.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Pyric_Bulwark" title="Pyric Bulwark">Pyric Bulwark</a></li></ul>
+<dl><dd>Resists physical damage.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Bilgestorm" title="Bilgestorm">Bilgestorm</a></li></ul>
+<dl><dd>Delivers an area attack. Additional effect duration varies with TP. Additional effect: Lowers attack, defense, and accuracy.</dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Bloodrake" title="Bloodrake">Bloodrake</a></li></ul>
+<dl><dd>Delivers a threefold attack. Damage varies with TP. Additional effect: HP Drain.</dd></dl></dd></dl>
+<ul><li>Four new familiars available with the Beastmaster's Call Beast ability have been added.</li></ul>
+<dl><dd><dl><dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_13.jpg" class="image"><img alt="Update12-14-2011 13.jpg" src="../../../images/3/39/Update12-14-2011_13.jpg" decoding="async" width="140" height="140" /></a><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_14.jpg" class="image"><img alt="Update12-14-2011 14.jpg" src="../../../images/0/0b/Update12-14-2011_14.jpg" decoding="async" width="140" height="140" /></a><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_15.jpg" class="image"><img alt="Update12-14-2011 15.jpg" src="../../../images/8/88/Update12-14-2011_15.jpg" decoding="async" width="140" height="140" /></a><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_16.jpg" class="image"><img alt="Update12-14-2011 16.jpg" src="../../../images/b/b4/Update12-14-2011_16.jpg" decoding="async" width="140" height="140" /></a></dd></dl></dd></dl>
+<ul><li>The familiar Presto Julio will now attack faster.</li></ul>
+<ul><li>The following job adjustments have been implemented:</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Warrior" title="Warrior">Warrior</a></li></ul>
+<dl><dd><ul><li>The maximum weapon skill power bonus granted by the ability <a href="https://www.bg-wiki.com/ffxi/Restraint" title="Restraint">Restraint</a> has been reduced.</li></ul></dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Thief" title="Thief">Thief</a></li></ul>
+<dl><dd><ul><li>Melee weapon skills will now have a chance of enhancing <a href="https://www.bg-wiki.com/ffxi/Treasure_Hunter" title="Treasure Hunter">Treasure Hunter</a> effectiveness.</li></ul>
+<dl><dd><ul><li>Weapon skills used alone will grant the enhancement at the same rate as standard melee attacks.</li>
+<li>Weapon skills combined with Sneak Attack or Trick Attack will grant the enhancement at the same rate as melee attacks made with these abilities active.</li>
+<li>For multi-part weapon skills, the bonus calculation will only be performed for the first hit.</li></ul></dd>
+<dd><font color="#FF0000">*Weapon skill Treasure Hunter bonuses will not be accompanied by visual effects or log window messages.</font></dd></dl></dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Puppetmaster" title="Puppetmaster">Puppetmaster</a></li></ul>
+<dl><dd><ul><li>Attachment-related</li></ul>
+<dl><dd><ul><li>Maximum effect values for the following attachments will now increase in proportion to the number of active maneuvers:</li></ul></dd></dl></dd></dl></dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><a href="https://www.bg-wiki.com/ffxi/Strobe" title="Strobe">Strobe</a> / <a href="https://www.bg-wiki.com/ffxi/Inhibitor" title="Inhibitor">Inhibitor</a> / <a href="https://www.bg-wiki.com/ffxi/Steam_Jacket" title="Steam Jacket">Steam Jacket</a> / <a href="https://www.bg-wiki.com/ffxi/Auto-Repair_Kit_II" class="mw-redirect" title="Auto-Repair Kit II">Auto-Repair Kit II</a></dd></dl></dd></dl></dd></dl></dd></dl></dd></dl>
+<dl><dd><dl><dd><dl><dd><ul><li>The required capacity of the following attachments has been reduced from 2 to 1:</li></ul></dd></dl></dd></dl></dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><a href="https://www.bg-wiki.com/ffxi/Reactive_Shield" title="Reactive Shield">Reactive Shield</a> / <a href="https://www.bg-wiki.com/ffxi/Scope" title="Scope">Scope</a> / <a href="https://www.bg-wiki.com/ffxi/Schurzen" title="Schurzen">Schurzen</a> / <a href="https://www.bg-wiki.com/ffxi/Volt_Gun" title="Volt Gun">Volt Gun</a></dd></dl></dd></dl></dd></dl></dd></dl></dd></dl>
+<dl><dd><dl><dd><dl><dd><ul><li>The properties of the following attachments have been revised:</li></ul></dd></dl></dd></dl></dd></dl>
+<table border="1" align="center" cellspacing="0">
+<tbody><tr>
+<td>
+<table width="600" border="1">
+<tbody><tr bgcolor="#ADBDCC">
+<th>Attachment Name
+</th>
+<th>Revised Properties
+</th></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Reactive_Shield" title="Reactive Shield">Reactive Shield</a>
+</td>
+<td>Counterattack damage will now receive a bonus in proportion to frame skill level.
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Mana_Booster" title="Mana Booster">Mana Booster</a>
+</td>
+<td>Will now shorten casting time instead of increasing spell use frequency.
+</td></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Drum_Magazine" title="Drum Magazine">Drum Magazine</a>
+</td>
+<td>Accuracy penalty has been eased slightly, and attack speed raised.
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Replicator" title="Replicator">Replicator</a>
+</td>
+<td>Blink shadow quantity will now increase in proportion to the number of active Wind Maneuvers.
+</td></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Shock_Absorber" title="Shock Absorber">Shock Absorber</a>
+</td>
+<td>Damage absorbed will now receive a bonus based on frame skill and active Ice Maneuvers.
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Armor_Plate" title="Armor Plate">Armor Plate</a><br /><a href="https://www.bg-wiki.com/ffxi/Armor_Plate_II" title="Armor Plate II">Armor Plate II</a>
+</td>
+<td>Will now reduce physical damage taken rather than enhancing defense.
+</td></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Hammermill" title="Hammermill">Hammermill</a>
+</td>
+<td>Shield Bash will now always hit while Hammermill is equipped.
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Volt_Gun" title="Volt Gun">Volt Gun</a>
+</td>
+<td>Will no longer depend on enemy level, and a damage bonus will be granted based on frame skill level and active Thunder Maneuvers.
+</td></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Heatsink" title="Heatsink">Heatsink</a>
+</td>
+<td>Overload rate reduction will now apply to all maneuvers, not only Fire Maneuvers.
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Damage_Gauge" title="Damage Gauge">Damage Gauge</a>
+</td>
+<td>Recast time for curing magic will be shortened.
+</td></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Eraser" title="Eraser">Eraser</a>
+</td>
+<td>Will cure multiple status ailments and erase only Light Maneuvers.
+</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+<dl><dd><dl><dd><ul><li>Automaton-related</li></ul></dd></dl></dd></dl>
+<dl><dd><dl><dd><dl><dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_17.jpg" class="image"><img alt="Update12-14-2011 17.jpg" src="../../../images/9/90/Update12-14-2011_17.jpg" decoding="async" width="240" height="180" /></a>
+<ul><li>Automaton behavior patterns have been refined.</li></ul>
+<dl><dd><ul><li>With one active light maneuver, automatons will now prioritize HP recovery over curing status ailments.</li>
+<li>Automatons will also prioritize HP recovery when HP level is extremely low.</li></ul></dd></dl>
+<ul><li>Magic spells have been added/adjusted as follows:</li></ul>
+<dl><dd><ul><li>Separate recast timers have been established for each category of magic, such as enhancing or enfeebling spells.</li></ul>
+<dl><dd><font color="#FF0000">*Cure-type spells, Regen-type spells, and status ailment removal spells will each have their own recast timer.</font></dd></dl>
+<ul><li>Automatons may now learn the following spells:</li></ul></dd></dl></dd></dl></dd></dl></dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd>Protect (I-V) / Shell (I-V) / Stoneskin / Haste / Phalanx / Erase / Absorb-Attri / Dispel / Dread Spikes / Addle / Regen IV</dd>
+<dd><font color="#FF0000">*Phalanx and Stoneskin will only be cast upon the master.</font></dd>
+<dd><font color="#FF0000">*Protect, Shell, and Haste will only be cast upon the master and party members.</font></dd></dl></dd></dl></dd></dl></dd></dl></dd></dl></dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><ul><li>Level IV elemental spells have been unlocked for the Stormwaker Y-700.</li>
+<li>Automatons will now occasionally cast Cure V instead of Cure VI depending on the target's current HP.</li></ul></dd></dl>
+<ul><li>Weapon skill adjustments</li></ul>
+<dl><dd><ul><li>A minimum damage value has been established for Magic Mortar.</li></ul></dd></dl>
+<ul><li>Sharpshot Z-500 adjustments:</li></ul>
+<dl><dd><ul><li>Distance modifications for ranged attacks have been abolished.</li></ul></dd></dl></dd></dl>
+<ul><li>Master-related</li></ul>
+<dl><dd><ul><li>The job ability "<a href="https://www.bg-wiki.com/ffxi/Maintenance" title="Maintenance">Maintenance</a>" （Lv. 30 / Recast time: 90 seconds） has been added:</li></ul>
+<dl><dd><ul><li>This ability will require <a href="https://www.bg-wiki.com/ffxi/Automaton_Oil" title="Automaton Oil">Automaton Oil</a>, and will be effective on all status ailments curable by Erase and Na-type spells.</li>
+<li>Up to four status ailments may be removed depending on the type of Automaton Oil used.</li></ul>
+<dl><dd><font color="#FF0000">*To accompany this change, the new item <a href="https://www.bg-wiki.com/ffxi/Automaton_Oil_%2B3" class="mw-redirect" title="Automaton Oil +3">Automaton Oil +3</a> (Lv. 80) has been added.</font></dd></dl></dd></dl></dd></dl></dd></dl>
+<ul><li><a href="https://www.bg-wiki.com/ffxi/Scholar" title="Scholar">Scholar</a></li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Light_Arts" title="Light Arts">Light Arts</a> will now grant a bonus to the effect and duration of Regen spells.</li>
+<li><a href="https://www.bg-wiki.com/ffxi/Dark_Arts" title="Dark Arts">Dark Arts</a> will now grant a bonus to the effect and duration of Helix spells.</li>
+<li><a href="https://www.bg-wiki.com/ffxi/Tabula_Rasa" title="Tabula Rasa">Tabula Rasa</a> will now grant a bonus to the effect and duration of Regen and Helix spells.</li>
+<li><a href="https://www.bg-wiki.com/ffxi/Tabula_Rasa" title="Tabula Rasa">Tabula Rasa</a> will now negate recast times for Light and Dark Arts.</li>
+<li>The recast time for <a href="https://www.bg-wiki.com/ffxi/Modus_Veritas" title="Modus Veritas">Modus Veritas</a> has been shortened.</li>
+<li>The effect duration of <a href="https://www.bg-wiki.com/ffxi/Klimaform" title="Klimaform">Klimaform</a> has been lengthened.</li>
+<li>The learnable level for <a href="https://www.bg-wiki.com/ffxi/Regen_III" title="Regen III">Regen III</a> has been lowered from 83 to 59.</li>
+<li>The learnable levels for Helix spells have been lowered.</li>
+<li>The effect duration of Helix spells will now be based on the caster's level.</li></ul></dd></dl></dd></dl>
+<table border="1" align="center" cellspacing="0">
+<tbody><tr>
+<td>
+<table width="600" border="1">
+<tbody><tr bgcolor="#ADBDCC">
+<th>Level
+</th>
+<th>Duration
+</th></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2">20 — 39
+</td>
+<td>30 seconds
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2">40 — 59
+</td>
+<td>60 seconds
+</td></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2">60 and up
+</td>
+<td>90 seconds
+</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+<ul><li>The maximum recast time reduction bonus has been increased.</li></ul>
+<ul><li>Casting time has been reduced for the following spells:</li></ul>
+<dl><dd><dl><dd><a href="https://www.bg-wiki.com/ffxi/Regen" title="Regen">Regen</a> / <a href="https://www.bg-wiki.com/ffxi/Regen_II" title="Regen II">Regen II</a> / <a href="https://www.bg-wiki.com/ffxi/Regen_III" title="Regen III">Regen III</a> / <a href="https://www.bg-wiki.com/ffxi/Regen_IV" title="Regen IV">Regen IV</a></dd></dl></dd></dl>
+<ul><li>The following weapon skills have been added:</li></ul>
+<table border="1" align="center" cellspacing="0">
+<tbody><tr>
+<td>
+<table width="600" border="1">
+<tbody><tr bgcolor="#ADBDCC">
+<th>Weapon Skill
+</th>
+<th>Category
+</th>
+<th>Jobs
+</th></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Shijin_Spiral" title="Shijin Spiral">Shijin Spiral</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Hand-to-Hand" title="Category:Hand-to-Hand">Hand-to-Hand</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/MNK" class="mw-redirect" title="MNK">MNK</a>/<a href="https://www.bg-wiki.com/ffxi/PUP" class="mw-redirect" title="PUP">PUP</a>
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Exenterator" title="Exenterator">Exenterator</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Dagger" title="Category:Dagger">Dagger</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/WAR" class="mw-redirect" title="WAR">WAR</a>/<a href="https://www.bg-wiki.com/ffxi/RDM" class="mw-redirect" title="RDM">RDM</a>/<a href="https://www.bg-wiki.com/ffxi/THF" class="mw-redirect" title="THF">THF</a>/<a href="https://www.bg-wiki.com/ffxi/BST" class="mw-redirect" title="BST">BST</a>/<a href="https://www.bg-wiki.com/ffxi/BRD" class="mw-redirect" title="BRD">BRD</a>/<a href="https://www.bg-wiki.com/ffxi/RNG" class="mw-redirect" title="RNG">RNG</a>/<a href="https://www.bg-wiki.com/ffxi/NIN" class="mw-redirect" title="NIN">NIN</a>/<a href="https://www.bg-wiki.com/ffxi/COR" class="mw-redirect" title="COR">COR</a>/<a href="https://www.bg-wiki.com/ffxi/DNC" class="mw-redirect" title="DNC">DNC</a>
+</td></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Requiescat" title="Requiescat">Requiescat</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Sword" title="Category:Sword">Sword</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/WAR" class="mw-redirect" title="WAR">WAR</a>/<a href="https://www.bg-wiki.com/ffxi/RDM" class="mw-redirect" title="RDM">RDM</a>/<a href="https://www.bg-wiki.com/ffxi/PLD" class="mw-redirect" title="PLD">PLD</a>/<a href="https://www.bg-wiki.com/ffxi/DRK" class="mw-redirect" title="DRK">DRK</a>/<a href="https://www.bg-wiki.com/ffxi/SAM" class="mw-redirect" title="SAM">SAM</a>/<a href="https://www.bg-wiki.com/ffxi/BLU" class="mw-redirect" title="BLU">BLU</a>/<a href="https://www.bg-wiki.com/ffxi/COR" class="mw-redirect" title="COR">COR</a>
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Resolution" title="Resolution">Resolution</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Great_Sword" title="Category:Great Sword">Great Sword</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/WAR" class="mw-redirect" title="WAR">WAR</a>/<a href="https://www.bg-wiki.com/ffxi/PLD" class="mw-redirect" title="PLD">PLD</a>/<a href="https://www.bg-wiki.com/ffxi/DRK" class="mw-redirect" title="DRK">DRK</a>
+</td></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Ruinator" title="Ruinator">Ruinator</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Axe" title="Category:Axe">Axe</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/WAR" class="mw-redirect" title="WAR">WAR</a>/<a href="https://www.bg-wiki.com/ffxi/DRK" class="mw-redirect" title="DRK">DRK</a>/<a href="https://www.bg-wiki.com/ffxi/BST" class="mw-redirect" title="BST">BST</a>/<a href="https://www.bg-wiki.com/ffxi/RNG" class="mw-redirect" title="RNG">RNG</a>
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Upheaval" title="Upheaval">Upheaval</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Great_Axe" title="Category:Great Axe">Great Axe</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/WAR" class="mw-redirect" title="WAR">WAR</a>/<a href="https://www.bg-wiki.com/ffxi/DRK" class="mw-redirect" title="DRK">DRK</a>
+</td></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Entropy" title="Entropy">Entropy</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Scythe" title="Category:Scythe">Scythe</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/WAR" class="mw-redirect" title="WAR">WAR</a>/<a href="https://www.bg-wiki.com/ffxi/DRK" class="mw-redirect" title="DRK">DRK</a>/<a href="https://www.bg-wiki.com/ffxi/BST" class="mw-redirect" title="BST">BST</a>
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Stardiver" title="Stardiver">Stardiver</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Polearm" title="Category:Polearm">Polearm</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/WAR" class="mw-redirect" title="WAR">WAR</a>/<a href="https://www.bg-wiki.com/ffxi/SAM" class="mw-redirect" title="SAM">SAM</a>/<a href="https://www.bg-wiki.com/ffxi/DRG" class="mw-redirect" title="DRG">DRG</a>
+</td></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Blade:_Shun" title="Blade: Shun">Blade: Shun</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Katana" title="Category:Katana">Katana</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/NIN" class="mw-redirect" title="NIN">NIN</a>
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Tachi:_Shoha" title="Tachi: Shoha">Tachi: Shoha</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Great_Katana" title="Category:Great Katana">Great Katana</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/SAM" class="mw-redirect" title="SAM">SAM</a>
+</td></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Realmrazer" title="Realmrazer">Realmrazer</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Club" title="Category:Club">Club</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/WAR" class="mw-redirect" title="WAR">WAR</a>/<a href="https://www.bg-wiki.com/ffxi/MNK" class="mw-redirect" title="MNK">MNK</a>/<a href="https://www.bg-wiki.com/ffxi/WHM" class="mw-redirect" title="WHM">WHM</a>/<a href="https://www.bg-wiki.com/ffxi/BLM" class="mw-redirect" title="BLM">BLM</a>/<a href="https://www.bg-wiki.com/ffxi/PLD" class="mw-redirect" title="PLD">PLD</a>/<a href="https://www.bg-wiki.com/ffxi/SMN" class="mw-redirect" title="SMN">SMN</a>/<a href="https://www.bg-wiki.com/ffxi/BLU" class="mw-redirect" title="BLU">BLU</a>/<a href="https://www.bg-wiki.com/ffxi/SCH" class="mw-redirect" title="SCH">SCH</a>
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Shattersoul" title="Shattersoul">Shattersoul</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Staff" title="Category:Staff">Staff</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/WAR" class="mw-redirect" title="WAR">WAR</a>/<a href="https://www.bg-wiki.com/ffxi/MNK" class="mw-redirect" title="MNK">MNK</a>/<a href="https://www.bg-wiki.com/ffxi/WHM" class="mw-redirect" title="WHM">WHM</a>/<a href="https://www.bg-wiki.com/ffxi/BLM" class="mw-redirect" title="BLM">BLM</a>/<a href="https://www.bg-wiki.com/ffxi/PLD" class="mw-redirect" title="PLD">PLD</a>/<a href="https://www.bg-wiki.com/ffxi/BRD" class="mw-redirect" title="BRD">BRD</a>/<a href="https://www.bg-wiki.com/ffxi/DRG" class="mw-redirect" title="DRG">DRG</a>/<a href="https://www.bg-wiki.com/ffxi/SMN" class="mw-redirect" title="SMN">SMN</a>/<a href="https://www.bg-wiki.com/ffxi/SCH" class="mw-redirect" title="SCH">SCH</a>
+</td></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Apex_Arrow" title="Apex Arrow">Apex Arrow</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Archery" title="Category:Archery">Archery</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/RNG" class="mw-redirect" title="RNG">RNG</a>/<a href="https://www.bg-wiki.com/ffxi/SAM" class="mw-redirect" title="SAM">SAM</a>
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Last_Stand" title="Last Stand">Last Stand</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Marksmanship" title="Category:Marksmanship">Marksmanship</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/THF" class="mw-redirect" title="THF">THF</a>/<a href="https://www.bg-wiki.com/ffxi/RNG" class="mw-redirect" title="RNG">RNG</a>/<a href="https://www.bg-wiki.com/ffxi/COR" class="mw-redirect" title="COR">COR</a>
+</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+<dl><dd><ul><li>A new "<a href="https://www.bg-wiki.com/ffxi/Category:Weapon_Skills" title="Category:Weapon Skills">Weapon Skill</a>" category has been added to the <a href="https://www.bg-wiki.com/ffxi/Merit_Points" title="Merit Points">merit point</a> menu.</li></ul>
+<dl><dd><ul><li>Maximum total value: 15</li>
+<li>Upgrade levels: 5</li>
+<li>Merit points needed for each upgrade: 10/15/20/25/30</li></ul></dd></dl>
+<ul><li>To unlock these merit point weapon skills and the corresponding menu, players must first complete the quest "<a href="https://www.bg-wiki.com/ffxi/Martial_Mastery" title="Martial Mastery">Martial Mastery</a>" offered by the <a href="https://www.bg-wiki.com/ffxi/Nomad_Moogle" title="Nomad Moogle">Nomad Moogle</a> NPC in <a href="https://www.bg-wiki.com/ffxi/Ru'Lude_Gardens" title="Ru&#39;Lude Gardens">Ru'Lude Gardens</a>.</li></ul>
+<dl><dd><font color="#FF0000">*To undertake this quest, the player's main job must be level 96 or higher.</font></dd></dl>
+<ul><li>Each individual weapon skill may be learned by upgrading it at least one level.</li>
+<li>Additional merit points allocated to a particular skill will incrementally enhance its power.</li>
+<li>The following conditions must be met to use a skill after learning it:</li></ul>
+<dl><dd><ul><li>The PC's main job must be eligible for the skill in question (see chart below).</li>
+<li>Job level must be 96 or higher.</li>
+<li>The corresponding weapon skill attribute must be 357 or higher.</li></ul></dd></dl></dd></dl>
+<ul><li>The items dropped by the Champion Crawler monster in <a href="https://www.bg-wiki.com/ffxi/Rolanberry_Fields_(S)" title="Rolanberry Fields (S)">Rolanberry Fields (S)</a> have been adjusted.</li></ul>
+<ul><li>The name of the <a href="https://www.bg-wiki.com/ffxi/Den_of_Rancor" title="Den of Rancor">Den of Rancor</a> monster Stygian Pugil has been corrected to Demonic Pugil.</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Item-related">Item-related</span></h2>
+<ul><li>New items have been introduced.</li></ul>
+<ul><li>New synthesis recipes have been introduced.</li></ul>
+<ul><li>New synergy recipes have been introduced.</li></ul>
+<div align="center"><b>&lt;Rank: Recruit&gt;</b></div>
+<table border="1">
+<tbody><tr>
+<td>
+<table width="600" border="0">
+<tbody><tr bgcolor="#ADBDCC">
+<th width="20%">Item
+</th>
+<th width="20%">Required Crafting Skill
+</th>
+<th width="60%">Ingredients
+</th></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Wormy_Broth" title="Wormy Broth">Wormy Broth</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Cooking" title="Cooking">Cooking</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Little_Worm" title="Little Worm">Little Worm</a>, <a href="https://www.bg-wiki.com/ffxi/Shell_Bug" title="Shell Bug">Shell Bug</a>
+</td></tr>
+</tbody></table>
+</td></tr></tbody></table>
+<div align="center"><b>&lt;Rank: Craftsman&gt;</b></div>
+<table border="1">
+<tbody><tr>
+<td>
+<table width="600" border="0">
+<tbody><tr bgcolor="#ADBDCC">
+<th width="20%">Item
+</th>
+<th width="20%">Required Crafting Skill
+</th>
+<th width="60%">Ingredients
+</th></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Gargouille_Arrow" title="Gargouille Arrow">Gargouille Arrow</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Woodworking" title="Woodworking">Woodworking</a><br /><a href="https://www.bg-wiki.com/ffxi/Bonecraft" title="Bonecraft">Bonecraft</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Arrowwood_Lbr." title="Arrowwood Lbr.">Arrowwood Lumber</a>, <a href="https://www.bg-wiki.com/ffxi/Gargouille_Arrowheads" class="mw-redirect" title="Gargouille Arrowheads">Gargouille Arrowheads</a>, <a href="https://www.bg-wiki.com/ffxi/Peapuk_Fletchings" class="mw-redirect" title="Peapuk Fletchings">Peapuk Fletchings</a>
+</td></tr>
+<tr align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Briny_Broth" title="Briny Broth">Briny Broth</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Cooking" title="Cooking">Cooking</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Hamsi" title="Hamsi">Hamsi</a>, <a href="https://www.bg-wiki.com/ffxi/Mercanbaligi" title="Mercanbaligi">Mercanbaligi</a>, <a href="https://www.bg-wiki.com/ffxi/Rhinochimera" title="Rhinochimera">Rhinochimera</a>
+</td></tr>
+</tbody></table>
+</td></tr></tbody></table>
+<div align="center"><b>&lt;Rank: Artisan&gt;</b></div>
+<table border="1">
+<tbody><tr>
+<td>
+<table width="600" border="0">
+<tbody><tr bgcolor="#ADBDCC">
+<th width="20%">Item
+</th>
+<th width="20%">Required Crafting Skill
+</th>
+<th width="60%">Ingredients
+</th></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Adaman_Bolt" title="Adaman Bolt">Adaman Bolt</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Woodworking" title="Woodworking">Woodworking</a><br /><a href="https://www.bg-wiki.com/ffxi/Smithing" title="Smithing">Smithing</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Holly_Lumber" title="Holly Lumber">Holly Lumber</a>, <a href="https://www.bg-wiki.com/ffxi/Adaman_Bolt_Heads" class="mw-redirect" title="Adaman Bolt Heads">Adaman Bolt Heads</a>
+</td></tr>
+<tr align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Avant_Gauntlets" title="Avant Gauntlets">Avant Gauntlets</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Smithing" title="Smithing">Smithing</a><br /><a href="https://www.bg-wiki.com/ffxi/Goldsmithing" title="Goldsmithing">Goldsmithing</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Mythril_Sheet" title="Mythril Sheet">Mythril Sheet</a>, <a href="https://www.bg-wiki.com/ffxi/Durium_Sheet" title="Durium Sheet">Durium Sheet</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Mythril_Gauntlets" title="Mythril Gauntlets">Mythril Gauntlets</a>
+</td></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Avant_Leggings" title="Avant Leggings">Avant Leggings</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Smithing" title="Smithing">Smithing</a><br /><a href="https://www.bg-wiki.com/ffxi/Goldsmithing" title="Goldsmithing">Goldsmithing</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Mythril_Sheet" title="Mythril Sheet">Mythril Sheet</a>, <a href="https://www.bg-wiki.com/ffxi/Durium_Sheet" title="Durium Sheet">Durium Sheet</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Mythril_Leggings" title="Mythril Leggings">Mythril Leggings</a>
+</td></tr>
+<tr align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Avant_Helm" title="Avant Helm">Avant Helm</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Smithing" title="Smithing">Smithing</a><br /><a href="https://www.bg-wiki.com/ffxi/Leathercraft" title="Leathercraft">Leathercraft</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Mythril_Ingot" title="Mythril Ingot">Mythril Ingot</a>, <a href="https://www.bg-wiki.com/ffxi/Mythril_Sheet" title="Mythril Sheet">Mythril Sheet</a>, <a href="https://www.bg-wiki.com/ffxi/Durium_Sheet" title="Durium Sheet">Durium Sheet</a>, <a href="https://www.bg-wiki.com/ffxi/Tiger_Leather" title="Tiger Leather">Black Tiger Leather</a>
+</td></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Avant_Cuisses" title="Avant Cuisses">Avant Cuisses</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Smithing" title="Smithing">Smithing</a><br /><a href="https://www.bg-wiki.com/ffxi/Leathercraft" title="Leathercraft">Leathercraft</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Mythril_Sheet" title="Mythril Sheet">Mythril Sheet</a>, <a href="https://www.bg-wiki.com/ffxi/Durium_Sheet" title="Durium Sheet">Durium Sheet</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Tiger_Leather" title="Tiger Leather">Black Tiger Leather</a> x 2
+</td></tr>
+<tr align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Sweven_Coat" title="Sweven Coat">Sweven Coat</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Clothcraft" title="Clothcraft">Clothcraft</a><br /><a href="https://www.bg-wiki.com/ffxi/Leathercraft" title="Leathercraft">Leathercraft</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Sparkstrand" title="Sparkstrand">Sparkstrand</a>, <a href="https://www.bg-wiki.com/ffxi/Wool_Cloth" title="Wool Cloth">Wool Cloth</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Twill_Damask" title="Twill Damask">Twill Damask</a> x 3, <a href="https://www.bg-wiki.com/ffxi/Tiger_Leather" title="Tiger Leather">Black Tiger Leather</a>
+</td></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Sweven_Mitts" title="Sweven Mitts">Sweven Mitts</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Clothcraft" title="Clothcraft">Clothcraft</a><br /><a href="https://www.bg-wiki.com/ffxi/Leathercraft" title="Leathercraft">Leathercraft</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Sparkstrand" title="Sparkstrand">Sparkstrand</a>, <a href="https://www.bg-wiki.com/ffxi/Wool_Cloth" title="Wool Cloth">Wool Cloth</a>, <a href="https://www.bg-wiki.com/ffxi/W._Spider's_Web" title="W. Spider&#39;s Web">Water Spider's Web</a>, <a href="https://www.bg-wiki.com/ffxi/Tiger_Leather" title="Tiger Leather">Black Tiger Leather</a>
+</td></tr>
+<tr align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Sweven_Slacks" title="Sweven Slacks">Sweven Slacks</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Clothcraft" title="Clothcraft">Clothcraft</a><br /><a href="https://www.bg-wiki.com/ffxi/Leathercraft" title="Leathercraft">Leathercraft</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Sparkstrand" title="Sparkstrand">Sparkstrand</a>, <a href="https://www.bg-wiki.com/ffxi/Wool_Cloth" title="Wool Cloth">Wool Cloth</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Twill_Damask" title="Twill Damask">Twill Damask</a>, <a href="https://www.bg-wiki.com/ffxi/Tiger_Leather" title="Tiger Leather">Black Tiger Leather</a>
+</td></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Sweven_Boots" title="Sweven Boots">Sweven Boots</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Clothcraft" title="Clothcraft">Clothcraft</a><br /><a href="https://www.bg-wiki.com/ffxi/Leathercraft" title="Leathercraft">Leathercraft</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Sparkstrand" title="Sparkstrand">Sparkstrand</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Wool_Cloth" title="Wool Cloth">Wool Cloth</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Tiger_Leather" title="Tiger Leather">Black Tiger Leather</a>
+</td></tr>
+<tr align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Sweven_Corona" title="Sweven Corona">Sweven Corona</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Clothcraft" title="Clothcraft">Clothcraft</a><br /><a href="https://www.bg-wiki.com/ffxi/Alchemy" title="Alchemy">Alchemy</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Sparkstrand" title="Sparkstrand">Sparkstrand</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Coeurl_Whisker" title="Coeurl Whisker">Coeurl Whisker</a>, <a href="https://www.bg-wiki.com/ffxi/Seer's_Crown" title="Seer&#39;s Crown">Seer's Crown</a>
+</td></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Kacura_Cap" title="Kacura Cap">Kacura Cap</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Leathercraft" title="Leathercraft">Leathercraft</a><br /><a href="https://www.bg-wiki.com/ffxi/Bonecraft" title="Bonecraft">Bonecraft</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Marid_Leather" title="Marid Leather">Marid Leather</a>, <a href="https://www.bg-wiki.com/ffxi/Flocon-de-mer" title="Flocon-de-mer">Flocon-de-mer</a>, <a href="https://www.bg-wiki.com/ffxi/Coral_Cap" title="Coral Cap">Coral Cap</a>
+</td></tr>
+<tr align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Kacura_Mittens" title="Kacura Mittens">Kacura Mittens</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Leathercraft" title="Leathercraft">Leathercraft</a><br /><a href="https://www.bg-wiki.com/ffxi/Bonecraft" title="Bonecraft">Bonecraft</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Marid_Leather" title="Marid Leather">Marid Leather</a>, <a href="https://www.bg-wiki.com/ffxi/Wyvern_Scales" title="Wyvern Scales">Wyvern Scales</a>, <a href="https://www.bg-wiki.com/ffxi/Flocon-de-mer" title="Flocon-de-mer">Flocon-de-mer</a>
+</td></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Kacura_Subligar" title="Kacura Subligar">Kacura Subligar</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Leathercraft" title="Leathercraft">Leathercraft</a><br /><a href="https://www.bg-wiki.com/ffxi/Bonecraft" title="Bonecraft">Bonecraft</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Marid_Leather" title="Marid Leather">Marid Leather</a>, <a href="https://www.bg-wiki.com/ffxi/Flocon-de-mer" title="Flocon-de-mer">Flocon-de-mer</a>, <a href="https://www.bg-wiki.com/ffxi/Coral_Subligar" title="Coral Subligar">Coral Subligar</a>
+</td></tr>
+<tr align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Kacura_Leggings" title="Kacura Leggings">Kacura Leggings</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Leathercraft" title="Leathercraft">Leathercraft</a><br /><a href="https://www.bg-wiki.com/ffxi/Bonecraft" title="Bonecraft">Bonecraft</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Marid_Leather" title="Marid Leather">Marid Leather</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Wyvern_Scales" title="Wyvern Scales">Wyvern Scales</a>, <a href="https://www.bg-wiki.com/ffxi/Flocon-de-mer" title="Flocon-de-mer">Flocon-de-mer</a>
+</td></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Adaman_Bullet" title="Adaman Bullet">Adaman Bullet</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Alchemy" title="Alchemy">Alchemy</a><br /><a href="https://www.bg-wiki.com/ffxi/Smithing" title="Smithing">Smithing</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Adaman_Ingot" title="Adaman Ingot">Adaman Ingot</a>, <a href="https://www.bg-wiki.com/ffxi/Firesand" title="Firesand">Firesand</a>
+</td></tr>
+<tr align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Orichalcum_Bullet" class="mw-redirect" title="Orichalcum Bullet">Orichalcum Bullet</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Alchemy" title="Alchemy">Alchemy</a><br /><a href="https://www.bg-wiki.com/ffxi/Goldsmithing" title="Goldsmithing">Goldsmithing</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Ocl._Ingot" title="Ocl. Ingot">Orichalcum Ingot</a>, <a href="https://www.bg-wiki.com/ffxi/Firesand" title="Firesand">Firesand</a>
+</td></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Lucky_Broth" title="Lucky Broth">Lucky Broth</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Cooking" title="Cooking">Cooking</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Gelatin" title="Gelatin">Gelatin</a>, <a href="https://www.bg-wiki.com/ffxi/Buffalo_Meat" title="Buffalo Meat">Buffalo Meat</a>, <a href="https://www.bg-wiki.com/ffxi/Abaia" title="Abaia">Abaia</a>
+</td></tr>
+</tbody></table>
+</td></tr></tbody></table>
+<div align="center"><b>&lt;Rank: Adept&gt;</b></div>
+<table border="1">
+<tbody><tr>
+<td>
+<table width="600" border="0">
+<tbody><tr bgcolor="#ADBDCC">
+<th width="20%">Item
+</th>
+<th width="20%">Required Crafting Skill
+</th>
+<th width="60%">Ingredients
+</th></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Avant_Mail" title="Avant Mail">Avant Mail</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Smithing" title="Smithing">Smithing</a><br /><a href="https://www.bg-wiki.com/ffxi/Leathercraft" title="Leathercraft">Leathercraft</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Mythril_Sheet" title="Mythril Sheet">Mythril Sheet</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Durium_Sheet" title="Durium Sheet">Durium Sheet</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Tiger_Leather" title="Tiger Leather">Black Tiger Leather</a>, <a href="https://www.bg-wiki.com/ffxi/Ruszor_Leather" title="Ruszor Leather">Ruszor Leather</a>
+</td></tr>
+<tr align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Asura_Samue" title="Asura Samue">Asura Samue</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Clothcraft" title="Clothcraft">Clothcraft</a><br /><a href="https://www.bg-wiki.com/ffxi/Smithing" title="Smithing">Smithing</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Darksteel_Sheet" title="Darksteel Sheet">Darksteel Sheet</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Sparkstrand" title="Sparkstrand">Sparkstrand</a>, <a href="https://www.bg-wiki.com/ffxi/Velvet_Cloth" title="Velvet Cloth">Velvet</a>, <a href="https://www.bg-wiki.com/ffxi/Rainbow_Cloth" title="Rainbow Cloth">Rainbow Cloth</a>, <a href="https://www.bg-wiki.com/ffxi/Twill_Damask" title="Twill Damask">Twill Damask</a>
+</td></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Artful_Belt" title="Artful Belt">Artful Belt</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Leathercraft" title="Leathercraft">Leathercraft</a><br /><a href="https://www.bg-wiki.com/ffxi/Smithing" title="Smithing">Smithing</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Durium_Chain" title="Durium Chain">Durium Chain</a>, <a href="https://www.bg-wiki.com/ffxi/Ruszor_Leather" title="Ruszor Leather">Ruszor Leather</a>
+</td></tr>
+<tr align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Kacura_Harness" title="Kacura Harness">Kacura Harness</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Leathercraft" title="Leathercraft">Leathercraft</a><br /><a href="https://www.bg-wiki.com/ffxi/Bonecraft" title="Bonecraft">Bonecraft</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Marid_Leather" title="Marid Leather">Marid Leather</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Wyvern_Scales" title="Wyvern Scales">Wyvern Scales</a> x 2, <a href="https://www.bg-wiki.com/ffxi/Flocon-de-mer" title="Flocon-de-mer">Flocon-de-mer</a>
+</td></tr>
+<tr bgcolor="#EAF0FF" align="center">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Shadowy_Broth" title="Shadowy Broth">Shadowy Broth</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Cooking" title="Cooking">Cooking</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Dragon_Meat" title="Dragon Meat">Dragon Meat</a>, <a href="https://www.bg-wiki.com/ffxi/Nopales" title="Nopales">Nopales</a>, <a href="https://www.bg-wiki.com/ffxi/Agaricus" title="Agaricus">Agaricus</a>
+</td></tr>
+</tbody></table>
+</td></tr></tbody></table>
+<p><br />
+</p>
+<ul><li>The skills required for the synergy recipe for Fusion Bolts has been revised as follows:</li></ul>
+<ul><li>Previous Requirements	New Requirements</li>
+<li><a href="https://www.bg-wiki.com/ffxi/Smithing" title="Smithing">Smithing</a>, <a href="https://www.bg-wiki.com/ffxi/Woodworking" title="Woodworking">Woodworking</a> <a href="https://www.bg-wiki.com/ffxi/Woodworking" title="Woodworking">Woodworking</a>, <a href="https://www.bg-wiki.com/ffxi/Goldsmithing" title="Goldsmithing">Goldsmithing</a></li></ul>
+<ul><li>Succeeding in high-quality synthesis of the Automaton Oil item will now yield Automaton Oil +3.</li></ul>
+<ul><li>The following new quivers and pouches have been introduced:</li></ul>
+<dl><dd><dl><dd><a href="https://www.bg-wiki.com/ffxi/Gargouille_Quiver" class="mw-redirect" title="Gargouille Quiver">Gargouille Quiver</a> / <a href="https://www.bg-wiki.com/ffxi/Adaman_Bolt_Quiver" class="mw-redirect" title="Adaman Bolt Quiver">Adaman Bolt Quiver</a> / <a href="https://www.bg-wiki.com/ffxi/Orichalcum_Bullet_Pouch" class="mw-redirect" title="Orichalcum Bullet Pouch">Orichalcum Bullet Pouch</a> / <a href="https://www.bg-wiki.com/ffxi/Adaman_Bullet_Pouch" class="mw-redirect" title="Adaman Bullet Pouch">Adaman Bullet Pouch</a></dd></dl></dd></dl>
+<ul><li>[dev1060] Porter Moogle Service Expansion</li></ul>
+<dl><dd><ul><li>The following items are now storable through the <a href="https://www.bg-wiki.com/ffxi/Porter_Moogle" title="Porter Moogle">Porter Moogle</a> NPC:</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Storage_Slip_11" title="Storage Slip 11">Storage Slip 11</a>:</li></ul></dd></dl></dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><a href="https://www.bg-wiki.com/ffxi/Spook-a-Swirl" title="Spook-a-Swirl">Spook-a-Swirl</a> / <a href="https://www.bg-wiki.com/ffxi/Chocolate_Grumpkin" class="mw-redirect" title="Chocolate Grumpkin">Chocolate Grumpkin</a> / <a href="https://www.bg-wiki.com/ffxi/Harvest_Horror" title="Harvest Horror">Harvest Horror</a> / <a href="https://www.bg-wiki.com/ffxi/Spinet" title="Spinet">Spinet</a> / <a href="https://www.bg-wiki.com/ffxi/Maestro's_Baton" title="Maestro&#39;s Baton">Maestro's Baton</a></dd></dl></dd></dl></dd></dl></dd></dl>
+<ul><li>[dev1060] Porter Moogle Service Expansion</li></ul>
+<dl><dd><ul><li>The following storage slips have also been added:</li></ul>
+<dl><dd><ul><li><a href="https://www.bg-wiki.com/ffxi/Storage_Slip_12" title="Storage Slip 12">Storage Slip 12</a>: Relic -1 Armor</li>
+<li><a href="https://www.bg-wiki.com/ffxi/Storage_Slip_13" title="Storage Slip 13">Storage Slip 13</a>: Relic +2 Armor</li></ul></dd></dl></dd></dl>
+<ul><li>[dev1028] Ex Item Delivery Revisions</li>
+<li>The list of undeliverable exclusive items has been updated.</li></ul>
+<ul><li>Items will no longer be lost if paralyzed while using them.</li></ul>
+<ul><li>The help text for the following items has changed.</li></ul>
+<dl><dd><font color="#FF0000">*The characteristics of the items themselves remain the same.</font></dd></dl>
+<dl><dd><dl><dd><a href="https://www.bg-wiki.com/ffxi/Noesis_Helm" title="Noesis Helm">Noesis Helm</a> / <a href="https://www.bg-wiki.com/ffxi/Corselet" title="Corselet">Corselet</a> / <a href="https://www.bg-wiki.com/ffxi/Corselet_%2B1" title="Corselet +1">Corselet +1</a> / <a href="https://www.bg-wiki.com/ffxi/Mahant_Sandals" title="Mahant Sandals">Mahant Sandals</a> / <a href="https://www.bg-wiki.com/ffxi/Bitter_Corset" title="Bitter Corset">Bitter Corset</a> / <a href="https://www.bg-wiki.com/ffxi/Solitaire_Cape" title="Solitaire Cape">Solitaire Cape</a> / <a href="https://www.bg-wiki.com/ffxi/Laevateinn" title="Laevateinn">Laevateinn</a> / <a href="https://www.bg-wiki.com/ffxi/Tupsimati" title="Tupsimati">Tupsimati</a></dd></dl></dd></dl>
+<ul><li>NPC vendor prices for the following items have been reduced:</li></ul>
+<dl><dd><dl><dd><a href="https://www.bg-wiki.com/ffxi/Pyrohelix_Schema" class="mw-redirect" title="Pyrohelix Schema">Pyrohelix Schema</a> / <a href="https://www.bg-wiki.com/ffxi/Hydrohelix_Schema" class="mw-redirect" title="Hydrohelix Schema">Hydrohelix Schema</a> / <a href="https://www.bg-wiki.com/ffxi/Ionohelix_Schema" class="mw-redirect" title="Ionohelix Schema">Ionohelix Schema</a> / <a href="https://www.bg-wiki.com/ffxi/Cryohelix_Schema" class="mw-redirect" title="Cryohelix Schema">Cryohelix Schema</a> / <a href="https://www.bg-wiki.com/ffxi/Geohelix_Schema" class="mw-redirect" title="Geohelix Schema">Geohelix Schema</a> / <a href="https://www.bg-wiki.com/ffxi/Anemohelix_Schema" class="mw-redirect" title="Anemohelix Schema">Anemohelix Schema</a> / <a href="https://www.bg-wiki.com/ffxi/Luminohelix_Schema" class="mw-redirect" title="Luminohelix Schema">Luminohelix Schema</a> / <a href="https://www.bg-wiki.com/ffxi/Noctohelix_Schema" class="mw-redirect" title="Noctohelix Schema">Noctohelix Schema</a></dd></dl></dd></dl>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="System-related">System-related</span></h2>
+<ul><li>Nation names will no longer appear when checking auction house item properties.</li></ul>
+<ul><li>[dev1037] Symbols in Macro Names</li></ul>
+<dl><dd><ul><li>Certain symbols (+-*=/!?&lt;&gt;, etc.) may now be used in macro names.</li></ul>
+<dl><dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_18.jpg" class="image"><img alt="Update12-14-2011 18.jpg" src="../../../images/d/da/Update12-14-2011_18.jpg" decoding="async" width="300" height="73" /></a></dd></dl>
+<ul><li>Macro titles will now display up to eight characters in the Windows version (at resolutions of 1024 horizontal pixels or greater) and Xbox 360 HD mode.</li>
+<li>The location of the macro palette will be adjusted so that it no longer overlaps with the HP/MP/TP display. (Windows version only)</li></ul></dd></dl>
+<h2><span id="[Windows_and_Xbox_360-only_updates]"></span><span class="mw-headline" id=".5BWindows_and_Xbox_360-only_updates.5D">[Windows and Xbox 360-only updates]</span></h2>
+<ul><li>[dev1059] Log Window Expansion</li></ul>
+<dl><dd><ul><li>The log window will now allow for customization of window width and maximum/minimum number of lines displayed.</li>
+<li>These settings may be adjusted via the Main Menu under Config -&lt; Windows.</li></ul>
+<dl><dd><font color="#FF0000">*Maximum line width and minimum line width can be set to values of 6-20 and 0-20, respectively. Window width can be adjusted between ten values.</font></dd></dl></dd></dl>
+<h2><span id="[Window-only_updates]"></span><span class="mw-headline" id=".5BWindow-only_updates.5D">[Window-only updates]</span></h2>
+<ul><li>The following settings have been added to the FINAL FANTASY XI configuration utility:</li></ul>
+<dl><dd><dl><dd><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_19.jpg" class="image"><img alt="Update12-14-2011 19.jpg" src="../../../images/8/8e/Update12-14-2011_19.jpg" decoding="async" width="240" height="236" /></a><a href="https://www.bg-wiki.com/ffxi/File:Update12-14-2011_20.jpg" class="image"><img alt="Update12-14-2011 20.jpg" src="../../../images/b/b8/Update12-14-2011_20.jpg" decoding="async" width="240" height="236" /></a></dd></dl>
+<ul><li>Screen Size: Menu Resolution</li>
+<li>Adjust the resolution of menus.</li>
+<li>The main screen resolution for "FINAL FANTASY XI" is dependent on the "Overlay Graphics Resolution" setting.</li>
+<li>If the Overlay Graphics Resolution is set higher than the Menu Resolution, menus will be automatically resized.</li>
+<li>Texture Performance: Font</li>
+<li>Adjust font resolution.</li>
+<li>Compressed: Use the original high-performance compressed fonts.</li>
+<li>Uncompressed: Use an uncompressed version of the original fonts for slightly better readability.</li>
+<li>High Quality: Use new enhanced-resolution fonts.</li>
+<li>Sound: Always On</li>
+<li>Play sounds and background music even when the game window is inactive.</li></ul></dd></dl>
+<p><br />
+Resolved Issues
+</p>
+<ul><li>The following issues have been corrected:</li></ul>
+<dl><dd><ul><li>An issue wherein, under certain circumstances, the offer cutscene for the quest "<a href="https://www.bg-wiki.com/ffxi/Howl_from_the_Heavens" title="Howl from the Heavens">Howl from the Heavens</a>" would not activate.</li>
+<li>An issue wherein the VNM <a href="https://www.bg-wiki.com/ffxi/Kaggen" title="Kaggen">Kaggen</a> would use the ability "Death Prophet" immediately upon spawning.</li>
+<li>An issue wherein the effects of the VNM <a href="https://www.bg-wiki.com/ffxi/Giltine" title="Giltine">Giltine</a>'s ability "Hadal Summons" would persist even after reviving from a KO.</li>
+<li>An issue wherein using the <a href="https://www.bg-wiki.com/ffxi/Ranger" title="Ranger">ranger</a> ability "<a href="https://www.bg-wiki.com/ffxi/Decoy_Shot" title="Decoy Shot">Decoy Shot</a>" would end Voidwatch battles under certain circumstances.</li>
+<li>An issue wherein defeating the VNMs <a href="https://www.bg-wiki.com/ffxi/Hahava" title="Hahava">Hahava</a>, <a href="https://www.bg-wiki.com/ffxi/Celaeno" title="Celaeno">Celaeno</a>, or <a href="https://www.bg-wiki.com/ffxi/Voidwrought" title="Voidwrought">Voidwrought</a> would not bestow the appropriate title upon players.</li>
+<li>The issue in <a href="https://www.bg-wiki.com/ffxi/Walk_of_Echoes" title="Walk of Echoes">Walk of Echoes</a> wherein players would prematurely be given the option to reenter a battlefield if their last battle concluded at a completion rate of less than 50%.</li>
+<li>An issue wherein the Zeni Notorious Monster <a href="https://www.bg-wiki.com/ffxi/Ob" title="Ob">Ob</a>'s ability "Cannibal Blade" inflicted excessive amounts of damage.</li>
+<li>An issue wherein the five- and three-minute warning messages were displaying at improper times in the "<a href="https://www.bg-wiki.com/ffxi/Empty_Desires" title="Empty Desires">Empty Desires</a>" battlefield.</li>
+<li>An issue wherein monsters' familiars would linger even after the battle "<a href="https://www.bg-wiki.com/ffxi/The_Mobline_Comedy" title="The Mobline Comedy">The Mobline Comedy</a>" had concluded.</li>
+<li>An issue wherein the weapon skills <a href="https://www.bg-wiki.com/ffxi/Trueflight" title="Trueflight">Trueflight</a> and <a href="https://www.bg-wiki.com/ffxi/Leaden_Salute" title="Leaden Salute">Leaden Salute</a> did not count toward the objectives of <a href="https://www.bg-wiki.com/ffxi/Marksmanship_Trials" class="mw-redirect" title="Marksmanship Trials">Marksmanship weapon skill Magian trials</a>.</li>
+<li>An issue wherein the blood pact <a href="https://www.bg-wiki.com/ffxi/Flaming_Crush" title="Flaming Crush">Flaming Crush</a> did not count as a fire elemental attack for certain <a href="https://www.bg-wiki.com/ffxi/Trial_of_the_Magians" class="mw-redirect" title="Trial of the Magians">Magian trials</a>.</li>
+<li>An issue wherein <a href="https://www.bg-wiki.com/ffxi/Dynamis" class="mw-redirect" title="Dynamis">Dynamis</a> monsters defeated while players were KO'd did not count toward the objectives of certain Magian trials.</li>
+<li>An issue wherein Grounds Tomes did not show up on the map radar.</li>
+<li>An issue in the MMM Liquidation Team wherein the monster Siltim's Floral Bouquet ability did not inflict sleep as it should.</li>
+<li>An issue wherein the white magic spell "<a href="https://www.bg-wiki.com/ffxi/Temper" title="Temper">Temper</a>" did not receive a bonus based upon Enhancing Magic skill.</li>
+<li>An issue wherein damage healed with the spell <a href="https://www.bg-wiki.com/ffxi/Cura_II" title="Cura II">Cura II</a> did not count towards Afflatus Solace.</li>
+<li>An issue wherein the elemental affinities of the white magic spells <a href="https://www.bg-wiki.com/ffxi/Animus_Augeo" title="Animus Augeo">Animus Augeo</a> and <a href="https://www.bg-wiki.com/ffxi/Animus_Minuo" title="Animus Minuo">Animus Minuo</a> and the bard song <a href="https://www.bg-wiki.com/ffxi/Pining_Nocturne" title="Pining Nocturne">Pining Nocturne</a> were incorrect.</li>
+<li>An issue wherein the doom counter would not appear when the blue magic spell <a href="https://www.bg-wiki.com/ffxi/Mortal_Ray" title="Mortal Ray">Mortal Ray</a> was used on a player character.</li>
+<li>An issue wherein trading archaic mirrors to the <a href="https://www.bg-wiki.com/ffxi/Al_Zahbi" title="Al Zahbi">Al Zahbi</a> NPC <a href="https://www.bg-wiki.com/ffxi/Famatar" title="Famatar">Famatar</a> did not yield the full amount of Imperial Standing credits.</li>
+<li>An issue wherein monsters at a certain position in <a href="https://www.bg-wiki.com/ffxi/The_Shrine_of_Ru'Avitau" title="The Shrine of Ru&#39;Avitau">The Shrine of Ru'Avitau</a> would drop to lower floors.</li>
+<li>An issue wherein the weapon skill <a href="https://www.bg-wiki.com/ffxi/Catastrophe" title="Catastrophe">Catastrophe</a> would not trigger its additional effect (HP Drain) when guarded.</li>
+<li>An issue wherein "enfeebling magic" was not listed in the help text for the <a href="https://www.bg-wiki.com/ffxi/Light_Arts" title="Light Arts">Light Arts</a> icon.</li>
+<li>An issue wherein <a href="https://www.bg-wiki.com/ffxi/Blood_Pact:_Ward" title="Blood Pact: Ward">Blood Pact: Wards</a> would not affect party members if used after leaving the <a href="https://www.bg-wiki.com/ffxi/Walk_of_Echoes" title="Walk of Echoes">Walk of Echoes</a> with an avatar already summoned.</li>
+<li>An issue wherein beastmaster pets and avatars would not be KO'd by Doom.</li>
+<li>An issue wherein the attributes of the beastmaster familiars Funguar Familiar and Discreet Louise were reversed.</li>
+<li>An issue wherein the charge requirement for Lucky Lulush's special ability Wild Carrot was incorrect.</li>
+<li>An issue wherein the minimum level required to call Lucky Lulush was incorrect.</li>
+<li>An issue wherein the elemental icon for Fatso Fargann's special ability Drainkiss was incorrect.</li>
+<li>An issue wherein Dipper Yuly's special ability Sudden Lunge did not incur enmity.</li>
+<li>An issue wherein using a weapon skill after the automaton attachment <a href="https://www.bg-wiki.com/ffxi/Heat_Capacitor" title="Heat Capacitor">Heat Capacitor</a> went into effect would result in the wrong weapon skill being selected.</li>
+<li>An issue wherein the automaton attachment <a href="https://www.bg-wiki.com/ffxi/Scanner" title="Scanner">Scanner</a> would not prevent automatons from casting resistible enfeebling magic.</li>
+<li>An issue wherein the capacity of the automaton attachment <a href="https://www.bg-wiki.com/ffxi/Vivi-Valve" title="Vivi-Valve">Vivi-Valve</a> would not display properly.</li>
+<li>An issue in the merit point menu wherein the option to lower attributes would be available for jobs other than those currently selected.</li>
+<li>An issue wherein the weapon graphics for the <a href="https://www.bg-wiki.com/ffxi/Yagrush" title="Yagrush">Yagrush</a> and <a href="https://www.bg-wiki.com/ffxi/Nagi" title="Nagi">Nagi</a> would still be displayed when certain races cast magic.</li>
+<li>An issue wherein characters would display incorrectly when the effect of Invisibility wore off while character names were disabled via the /names text command.</li>
+<li>An issue wherein synthesis could be performed under the Costume status.</li>
+<li>An issue in macro execution wherein putting &lt;wait&gt; on the same line as &lt;st&gt;, &lt;stpc&gt;, &lt;stnpc&gt;, &lt;stpt&gt; and/or &lt;stal&gt; would result in &lt;wait&gt; being executed during sub-target selection.</li>
+<li>An issue with certain Crystal War era bard NPCs wherein incorrect designations were selectable.</li>
+<li>An issue wherein the event replays for the quests "Project: Shantottofication" and "An Uneasy Peace" were not selectable from the Goblin Footprints in the <a href="https://www.bg-wiki.com/ffxi/Sacrificial_Chamber" title="Sacrificial Chamber">Sacrificial Chamber</a>.</li>
+<li>An issue wherein certain conditions would result in only orobons being caught when fishing on the Silver Sea routes to Nashmau and Al Zahbi.</li></ul></dd></dl>
+<p><br />
+</p>
+<h2><span id="[English-language_version_only]"></span><span class="mw-headline" id=".5BEnglish-language_version_only.5D">[English-language version only]</span></h2>
+<ul><li>A number of text-related bugs reported on the forums have been addressed. Those issues not resolved in this version update will be addressed in a future patch.</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Known_Issues">Known Issues</span></h2>
+<ul><li>Trial numbers for relic armor will not display properly when viewing trial progression trees with the Magian Moogle.</li></ul>
+<p><br />
+</p>
+<hr />
+<p><font color="#006400">*New Magian trials for Relic, Mythic, and Empyrean weapons have been delayed to allow time for proper balancing.<br />
+They are scheduled to be introduced to the test server in the near future and implemented in the release version in an additional version update.<br />
+The items required for the trials, however, have been introduced in advance in this version update.</font>
+</p>
+<table border="1" align="center" cellspacing="0">
+<tbody><tr>
+<td>
+<table width="600" border="1">
+<tbody><tr bgcolor="#ADBDCC">
+<th>Requisite Item
+</th>
+<th>Corresponding Weapons
+</th></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Umbral_Marrow" title="Umbral Marrow">Umbral Marrow</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Relic_Weapons" title="Category:Relic Weapons">Relic Weapons</a>
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Mulcibar's_Scoria" title="Mulcibar&#39;s Scoria">Mulcibar's Scoria</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Category:Mythic_Weapons" title="Category:Mythic Weapons">Mythic Weapons</a>
+</td></tr>
+<tr bgcolor="#EAF0FF">
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Riftcinder" title="Riftcinder">Riftcinder</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Verethragna" title="Verethragna">Verethragna</a> / <a href="https://www.bg-wiki.com/ffxi/Almace" title="Almace">Almace</a> / <a href="https://www.bg-wiki.com/ffxi/Farsha" title="Farsha">Farsha</a> / <a href="https://www.bg-wiki.com/ffxi/Redemption" title="Redemption">Redemption</a> / <a href="https://www.bg-wiki.com/ffxi/Rhongomiant" title="Rhongomiant">Rhongomiant</a> / <a href="https://www.bg-wiki.com/ffxi/Masamune" title="Masamune">Masamune</a> / <a href="https://www.bg-wiki.com/ffxi/Gandiva" title="Gandiva">Gandiva</a> / <a href="https://www.bg-wiki.com/ffxi/Daurdabla" title="Daurdabla">Daurdabla</a>
+</td></tr>
+<tr>
+<td bgcolor="#CEE0F2"><a href="https://www.bg-wiki.com/ffxi/Riftdross" title="Riftdross">Riftdross</a>
+</td>
+<td><a href="https://www.bg-wiki.com/ffxi/Twashtar" title="Twashtar">Twashtar</a> / <a href="https://www.bg-wiki.com/ffxi/Caladbolg" title="Caladbolg">Caladbolg</a> / <a href="https://www.bg-wiki.com/ffxi/Ukonvasara" title="Ukonvasara">Ukonvasara</a> / <a href="https://www.bg-wiki.com/ffxi/Kannagi" title="Kannagi">Kannagi</a> / <a href="https://www.bg-wiki.com/ffxi/Gambanteinn" title="Gambanteinn">Gambanteinn</a> / <a href="https://www.bg-wiki.com/ffxi/Hvergelmir" title="Hvergelmir">Hvergelmir</a> / <a href="https://www.bg-wiki.com/ffxi/Armageddon" title="Armageddon">Armageddon</a> / <a href="https://www.bg-wiki.com/ffxi/Ochain" title="Ochain">Ochain</a>
+</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr></tbody></table>
+
+
+
+</div></div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://www.bg-wiki.com/index.php?title=Version_Update_(12/14/2011)&amp;oldid=208572">https://www.bg-wiki.com/index.php?title=Version_Update_(12/14/2011)&amp;oldid=208572</a>"</div>
+<div class="visualClear"></div></div></div></div><br /><div style="text-align:center;">
+<div id="bgwiki-bottomboard"></div>
+<script type="text/javascript">
+						    window['nitroAds'].createAd('bgwiki-bottomboard', {
+						        "refreshLimit": 10,
+						        "refreshTime": 90,
+								"renderVisibleOnly": true,
+								"refreshVisibleOnly": true,						        
+						        "mediaQuery": "(min-width: 748px)",
+						        "sizes": [
+						            [
+						                728,
+						                90
+						            ]
+						        ]
+						    });
+						</script>
+<script type="text/javascript">
+						    window['nitroAds'].createAd('bgwiki-category-board', {
+						        "refreshLimit": 10,
+						        "refreshTime": 90,
+								"renderVisibleOnly": true,
+								"refreshVisibleOnly": true,						        
+						        "mediaQuery": "(min-width: 748px)",
+						        "sizes": [
+						            [
+						                728,
+						                90
+						            ]
+						        ]
+						    });
+						</script>
+<script type="text/javascript">
+						    window['nitroAds'].createAd('bgwiki-anchor-mobile', {
+						        "refreshLimit": 10,
+						        "refreshTime": 60,
+								"format": "anchor",
+								"anchor": "bottom",						        
+						        "mediaQuery": "(min-width: 320px) and (max-width: 747px)"
+						    });
+						</script>
+<script type="text/javascript">
+						    window['nitroAds'].createAd('bgwiki-toc-medrec', {
+						        "refreshLimit": 10,
+						        "refreshTime": 90,
+								"renderVisibleOnly": true,
+								"refreshVisibleOnly": true,						        
+						        "sizes": [
+						            [
+						                300,
+						                250
+						            ]
+						        ]
+						    });
+						</script>
+</div><script type="text/javascript">
+						    window['nitroAds'].createAd('bgwiki-sidebar', {
+						      "refreshLimit": 10,
+						      "refreshTime": 90,
+							  "renderVisibleOnly": true,
+  							  "refreshVisibleOnly": true,						      
+						      "mediaQuery": "(min-width: 1100px)",
+						      "sizes": [
+						        [
+						          160,
+						          600
+						        ]
+						      ]
+						    });
+						    </script></div><div id="content-bottom-stuff"><div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://www.bg-wiki.com/ffxi/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://www.bg-wiki.com/ffxi/Category:Update_History" title="Category:Update History">Update History</a></li></ul></div></div></div></div><div id="mw-site-navigation"><div id="p-logo" class="mw-portlet" role="banner"><a class="mw-wiki-logo timeless-logo" href="https://www.bg-wiki.com/ffxi/Main_Page" title="Visit the main page"><img alt="FFXI Wiki" width="125px" src="../../../bg-wiki.svg" /></a></div><div id="site-navigation" class="sidebar-chunk"><h2><span>Navigation</span></h2><div class="sidebar-inner"><div role="navigation" class="mw-portlet" id="p-Navigation" aria-labelledby="p-Navigation-label"><h3 id="p-Navigation-label" lang="en" dir="ltr">Navigation</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-recentchanges"><a href="https://www.bg-wiki.com/ffxi/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r"><span>Recent changes</span></a></li><li id="n-BG-Forums"><a href="http://www.bluegartr.com/"><span>BG Forums</span></a></li><li id="n-No-Account.3F-Register.21"><a href="https://www.bg-wiki.com/index.php?title=Special:UserLogin"><span>No Account? Register!</span></a></li><li id="n-BG-Wiki-Discord.21"><a href="https://discord.gg/zpPEzGeJAR"><span>BG Wiki Discord!</span></a></li><li id="n-New-Editor.3F-Read-This.21"><a href="https://www.bg-wiki.com/ffxi/BGWiki:Getting_started"><span>New Editor? Read This!</span></a></li><li id="n-BG-Wiki-Feedback"><a href="https://www.bg-wiki.com/ffxi/BGWiki:Suggestions"><span>BG Wiki Feedback</span></a></li></ul></div></div><div role="navigation" class="mw-portlet" id="p-Popular_Pages" aria-labelledby="p-Popular_Pages-label"><h3 id="p-Popular_Pages-label" lang="en" dir="ltr">Popular Pages</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-Ambuscade"><a href="https://www.bg-wiki.com/ffxi/Category:Ambuscade"><span>Ambuscade</span></a></li><li id="n-Escha"><a href="https://www.bg-wiki.com/ffxi/Category:Escha"><span>Escha</span></a></li><li id="n-High-Tier-Battlefields"><a href="https://www.bg-wiki.com/ffxi/Category:High-Tier_Mission_Battlefields"><span>High-Tier Battlefields</span></a></li><li id="n-Odyssey"><a href="https://www.bg-wiki.com/ffxi/Category:Odyssey"><span>Odyssey</span></a></li><li id="n-Unity"><a href="https://www.bg-wiki.com/ffxi/Category:Unity_Concord"><span>Unity</span></a></li><li id="n-Omen"><a href="https://www.bg-wiki.com/ffxi/Category:Omen"><span>Omen</span></a></li><li id="n-Dynamis---Divergence"><a href="https://www.bg-wiki.com/ffxi/Category:Dynamis_-_Divergence"><span>Dynamis - Divergence</span></a></li><li id="n-Reforged-Armor"><a href="https://www.bg-wiki.com/ffxi/Category:Armor"><span>Reforged Armor</span></a></li><li id="n-Ultimate-Weapons"><a href="https://www.bg-wiki.com/ffxi/Category:Ultimate_Weapons"><span>Ultimate Weapons</span></a></li><li id="n-Oboro"><a href="https://www.bg-wiki.com/ffxi/Oboro"><span>Oboro</span></a></li><li id="n-Trust-Magic"><a href="https://www.bg-wiki.com/ffxi/Category:Trust"><span>Trust Magic</span></a></li><li id="n-Job-Specific-Equipment"><a href="https://www.bg-wiki.com/ffxi/Category:JSE"><span>Job Specific Equipment</span></a></li><li id="n-Curio-Moogles"><a href="https://www.bg-wiki.com/ffxi/Curio_Vendor_Moogle"><span>Curio Moogles</span></a></li><li id="n-Skirmish"><a href="https://www.bg-wiki.com/ffxi/Category:Skirmish"><span>Skirmish</span></a></li><li id="n-Alluvion-Skirmish"><a href="https://www.bg-wiki.com/ffxi/Category:Alluvion_Skirmish"><span>Alluvion Skirmish</span></a></li><li id="n-Records-of-Eminence"><a href="https://www.bg-wiki.com/ffxi/Category:Records_of_Eminence"><span>Records of Eminence</span></a></li><li id="n-Monstrosity"><a href="https://www.bg-wiki.com/ffxi/Category:Monstrosity"><span>Monstrosity</span></a></li><li id="n-Weakness-Procs"><a href="https://www.bg-wiki.com/ffxi/Weakness_Targeting"><span>Weakness Procs</span></a></li><li id="n-Delve"><a href="https://www.bg-wiki.com/ffxi/Category:Delve"><span>Delve</span></a></li><li id="n-Voidwatch"><a href="https://www.bg-wiki.com/ffxi/Category:Voidwatch"><span>Voidwatch</span></a></li><li id="n-Abjurations"><a href="https://www.bg-wiki.com/ffxi/Category:Abjurations"><span>Abjurations</span></a></li><li id="n-Abyssea"><a href="https://www.bg-wiki.com/ffxi/Category:Abyssea"><span>Abyssea</span></a></li><li id="n-Escutcheons"><a href="https://www.bg-wiki.com/ffxi/Category:Escutcheons"><span>Escutcheons</span></a></li><li id="n-Trial-of-the-Magians"><a href="https://www.bg-wiki.com/ffxi/Category:Trial_of_the_Magians"><span>Trial of the Magians</span></a></li></ul></div></div><div role="navigation" class="mw-portlet" id="p-Guides" aria-labelledby="p-Guides-label"><h3 id="p-Guides-label" lang="en" dir="ltr">Guides</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-Returning-to-Vana.27diel"><a href="https://www.bg-wiki.com/ffxi/Returning_to_Vana'diel"><span>Returning to Vana'diel</span></a></li><li id="n-1-119-Guide"><a href="https://www.bg-wiki.com/ffxi/Quickstart_1-119_Guide"><span>1-119 Guide</span></a></li><li id="n-Fantastic-EXPs"><a href="https://www.bg-wiki.com/ffxi/Fantastic_EXPs_and_Where_to_Find_Them"><span>Fantastic EXPs</span></a></li><li id="n-Adventurer-Campaigns"><a href="https://www.bg-wiki.com/ffxi/Category:Adventurer_Campaigns"><span>Adventurer Campaigns</span></a></li><li id="n-Guides-Directory"><a href="https://www.bg-wiki.com/ffxi/Category:Guides"><span>Guides Directory</span></a></li><li id="n-Job-Guides"><a href="https://www.bg-wiki.com/ffxi/Category:Job_Guides"><span>Job Guides</span></a></li></ul></div></div><div role="navigation" class="mw-portlet" id="p-Missions_.26_Quests" aria-labelledby="p-Missions_.26_Quests-label"><h3 id="p-Missions_.26_Quests-label" lang="en" dir="ltr">Missions &amp; Quests</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-Missions"><a href="https://www.bg-wiki.com/ffxi/Category:Missions"><span>Missions</span></a></li><li id="n-Quests"><a href="https://www.bg-wiki.com/ffxi/Category:Quests"><span>Quests</span></a></li><li id="n-History-and-Lore"><a href="https://www.bg-wiki.com/ffxi/Category:Lore"><span>History and Lore</span></a></li></ul></div></div><div role="navigation" class="mw-portlet" id="p-Vana.27diel" aria-labelledby="p-Vana.27diel-label"><h3 id="p-Vana.27diel-label" lang="en" dir="ltr">Vana'diel</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-Areas"><a href="https://www.bg-wiki.com/ffxi/Category:Areas"><span>Areas</span></a></li><li id="n-Transportation"><a href="https://www.bg-wiki.com/ffxi/Category:Transportation"><span>Transportation</span></a></li><li id="n-Home-Points"><a href="https://www.bg-wiki.com/ffxi/Home_Point"><span>Home Points</span></a></li><li id="n-Survival-Guides"><a href="https://www.bg-wiki.com/ffxi/Survival_Guide"><span>Survival Guides</span></a></li><li id="n-Bestiary"><a href="https://www.bg-wiki.com/ffxi/Category:Bestiary"><span>Bestiary</span></a></li></ul></div></div><div role="navigation" class="mw-portlet" id="p-Character_.26_Jobs" aria-labelledby="p-Character_.26_Jobs-label"><h3 id="p-Character_.26_Jobs-label" lang="en" dir="ltr">Character &amp; Jobs</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-Jobs"><a href="https://www.bg-wiki.com/ffxi/Category:Job-related"><span>Jobs</span></a></li><li id="n-Merits"><a href="https://www.bg-wiki.com/ffxi/Merit"><span>Merits</span></a></li><li id="n-Job-Points"><a href="https://www.bg-wiki.com/ffxi/Job_Points"><span>Job Points</span></a></li><li id="n-Skills"><a href="https://www.bg-wiki.com/ffxi/Category:Combat_Skills"><span>Skills</span></a></li><li id="n-Abilities"><a href="https://www.bg-wiki.com/ffxi/Category:Job_Ability"><span>Abilities</span></a></li><li id="n-Traits"><a href="https://www.bg-wiki.com/ffxi/Category:Job_Traits"><span>Traits</span></a></li><li id="n-Magic"><a href="https://www.bg-wiki.com/ffxi/Category:Spells"><span>Magic</span></a></li><li id="n-Weapon-Skills"><a href="https://www.bg-wiki.com/ffxi/Category:Weapon_Skills"><span>Weapon Skills</span></a></li></ul></div></div><div role="navigation" class="mw-portlet" id="p-Items" aria-labelledby="p-Items-label"><h3 id="p-Items-label" lang="en" dir="ltr">Items</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="n-Food"><a href="https://www.bg-wiki.com/ffxi/Food"><span>Food</span></a></li><li id="n-Weapons"><a href="https://www.bg-wiki.com/ffxi/Category:Weapon"><span>Weapons</span></a></li><li id="n-Armor"><a href="https://www.bg-wiki.com/ffxi/Category:Armor"><span>Armor</span></a></li><li id="n-Scrolls"><a href="https://www.bg-wiki.com/ffxi/Category:Scrolls"><span>Scrolls</span></a></li><li id="n-Furnishings"><a href="https://www.bg-wiki.com/ffxi/Furnishings"><span>Furnishings</span></a></li><li id="n-Materials"><a href="https://www.bg-wiki.com/ffxi/Category:Materials"><span>Materials</span></a></li><li id="n-Key-Items"><a href="https://www.bg-wiki.com/ffxi/Key_Item"><span>Key Items</span></a></li></ul></div></div></div></div><div id="site-tools" class="sidebar-chunk"><h2><span>Wiki tools</span></h2><div class="sidebar-inner"><div role="navigation" class="mw-portlet" id="p-tb" aria-labelledby="p-tb-label"><h3 id="p-tb-label" lang="en" dir="ltr">Wiki tools</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="t-specialpages"><a href="https://www.bg-wiki.com/ffxi/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q"><span>Special pages</span></a></li></ul></div></div></div></div></div><div id="mw-related-navigation"><div id="page-tools" class="sidebar-chunk"><h2><span>Page tools</span></h2><div class="sidebar-inner"><div role="navigation" class="mw-portlet emptyPortlet" id="p-cactions" aria-labelledby="p-cactions-label"><h3 id="p-cactions-label" lang="en" dir="ltr">Page tools</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"></ul></div></div><div role="navigation" class="mw-portlet emptyPortlet" id="p-userpagetools" aria-labelledby="p-userpagetools-label"><h3 id="p-userpagetools-label" lang="en" dir="ltr">Userpage tools</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"></ul></div></div><div role="navigation" class="mw-portlet" id="p-pagemisc" aria-labelledby="p-pagemisc-label"><h3 id="p-pagemisc-label" lang="en" dir="ltr">More</h3><div class="mw-portlet-body"><ul lang="en" dir="ltr"><li id="t-whatlinkshere"><a href="https://www.bg-wiki.com/ffxi/Special:WhatLinksHere/Version_Update_(12/14/2011)" title="A list of all wiki pages that link here [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked"><a href="https://www.bg-wiki.com/ffxi/Special:RecentChangesLinked/Version_Update_(12/14/2011)" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k"><span>Related changes</span></a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li><li id="t-permalink"><a href="https://www.bg-wiki.com/index.php?title=Version_Update_(12/14/2011)&amp;oldid=208572" title="Permanent link to this revision of the page"><span>Permanent link</span></a></li><li id="t-info"><a href="https://www.bg-wiki.com/index.php?title=Version_Update_(12/14/2011)&amp;action=info" title="More information about this page"><span>Page information</span></a></li><li id="t-pagelog"><a href="https://www.bg-wiki.com/index.php?title=Special:Log&amp;page=Version+Update+(12%2F14%2F2011)"><span>Page logs</span></a></li></ul></div></div></div></div><div id="catlinks-sidebar" class="sidebar-chunk"><h2><span>Categories</span></h2><div class="sidebar-inner"><div id="sidebar-normal-catlinks" class="mw-normal-catlinks"><div role="navigation" class="mw-portlet" id="p-normal-catlinks" aria-labelledby="p-normal-catlinks-label"><h3 id="p-normal-catlinks-label" lang="en" dir="ltr">Categories</h3><div class="mw-portlet-body"><ul><li><a href="https://www.bg-wiki.com/ffxi/Category:Update_History" title="Category:Update History">Update History</a></li></ul></div></div></div></div></div><div class="sidebar-chunk" style="text-align:center"><div id="bgwiki-sidebar"></div></div></div><div class="visualClear"></div></div></div><div id="mw-footer-container" class="mw-footer-container ts-container"><div id="mw-footer" class="mw-footer ts-inner"><div id="footer-bottom" class="mw-footer" role="contentinfo" lang="en" dir="ltr"><div id="f-poweredbyico" class="footer-icons"><a href="https://www.mediawiki.org/"><img src="../../../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../../../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../../../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy" /></a></div><ul id="f-list" class="footer-places"><li id="lastmod"> This page was last edited on 19 December 2011, at 23:07.</li><li id="privacy"><a href="https://www.bg-wiki.com/ffxi/BGWiki:Privacy_policy" title="BGWiki:Privacy policy">Privacy policy</a></li><li id="about"><a href="https://www.bg-wiki.com/ffxi/BGWiki:About" title="BGWiki:About">About FFXI Wiki</a></li><li id="disclaimer"><a href="https://www.bg-wiki.com/ffxi/BGWiki:General_disclaimer" title="BGWiki:General disclaimer">Disclaimers</a></li></ul><div class="visualClear"></div></div></div></div></div><script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.526","walltime":"0.543","ppvisitednodes":{"value":521,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20210525142409","ttl":259200,"transientcontent":false}}});});</script><script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":688});});</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"bf3936c99e","applicationID":"31775399","transactionName":"b1ZaZxRSXEYAB0MIXFYceVASWl1bTgVUFVpXXRdFD1ZF","queueTime":0,"applicationTime":35,"atts":"QxFZEVxIT0g=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
