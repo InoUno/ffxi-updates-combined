@@ -14,7 +14,7 @@ with open('relevant_links.txt', 'r') as input_file:
     links = input_file.readlines()
 
 
-with open('all_updates.html', 'w') as output_file:
+with open('index.html', 'w') as output_file:
     output_file.write("""
 <html>
 <head>
