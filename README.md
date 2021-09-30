@@ -1,6 +1,8 @@
 # Combined patch notes for all FFXI updates
 
-To be able to properly search across all the patch notes, Firefox is recommended for viewing the page. [Visit the full list here](https://inouno.github.io/ffxi-updates-combined/).
+[View the full notes here (Firefox recommended!)](https://inouno.github.io/ffxi-updates-combined/).
+
+Chrome is not good for searching through all the pages, so Firefox is recommended here.
 
 ## Generation
 
