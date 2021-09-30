@@ -1,0 +1,16 @@
+﻿/* --STYLE 040914-- */
+
+/* Text Style */
+.Tx12  { font-size:12px; line-height:180%; color:#555555 }
+
+/* Text Color */
+.Co12k { font-size:12px; line-height:180%; color:#000000 }
+.Co12w { font-size:12px; line-height:150%; color:#ffffff }
+.Co12b { font-size:12px; line-height:180%; color:#446699 }
+.Co12r { font-size:12px; line-height:180%; color:#FF0000 }
+.Co12o { font-size:12px; line-height:180%; color:#EE8800 }
+
+/* Link Color */
+a:link,a:visited{ font-size:12px; color:#272D76; text-decoration:none }	
+a:active { color:#FF6600; text-decoration:none }	
+a:hover  { color:#FF6600; text-decoration:none }

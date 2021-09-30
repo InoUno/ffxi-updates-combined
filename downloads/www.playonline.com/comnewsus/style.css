@@ -1,0 +1,43 @@
+/* --STYLE 031021-- */
+
+/* 本文スタイル */
+.list10 { font-size:10px; line-height:110%; color:#222222 }
+.list10w{ font-size:10px; line-height:110%; color:#ffffff }
+.tx10   { font-size:10px; line-height:160%; color:#222222 }
+.tx10_2 { font-size:10px; line-height:120%; color:#ff66ff }
+.tx11   { font-size:11px; line-height:140%; color:#222222 }
+.tx11_2 { font-size:11px; line-height:140%; color:#ff0000 }
+.tx11_3 { font-size:11px; line-height:140%; color:#003D99 }
+.tx12   { font-size:13px; line-height:140%; color:#000000 }
+.tx12_2 { font-size:13px; line-height:140%; color:#ffffff }
+.tx12_3 { font-size:13px; line-height:140%; color:#003D99 }
+.tx12_4 { font-size:13px; color:#ffffff }
+.tx12_5 { font-size:13px; line-height:180%; color:#444444 }
+.tx12_6 { font-size:13px; line-height:150%; color:#000000 }
+.tx12_7 { font-size:13px; line-height:150%; color:#CC0000 }
+.tx14   { font-size:14px; color:#ffffff }
+.co10   { font-size:10px; line-height:160%; color:#000066 }
+.co13   { font-size:12px; color:#000066 }
+.co13_02{ font-size:13px; line-height:120%; color:#7ACC66 }
+.co13_03{ font-size:13px; line-height:120%; color:#777777 }
+.co13_04{ font-size:13px; line-height:120%; color:#EFCC43 }
+.co13_05{ font-size:13px; line-height:120%; color:#FF8533 }
+.co13_06{ font-size:13px; line-height:120%; color:#009999 }
+.co13_b { font-size:13px; line-height:120%; color:#0000FF }
+.co12_b { font-size:13px; line-height:120%; color:#0000FF }
+.co13_r { font-size:13px; line-height:120%; color:#FF0000 }
+.co12_r { font-size:13px; line-height:120%; color:#FF0000 }
+
+/* 表組み用スタイル */
+.tb10 { font-size:10px; line-height:115%; color:#000000 }
+.tb11 { font-size:11px; line-height:115%; color:#000000 }
+.tb11_2 { font-size:11px; line-height:115%; color:#003D99 }
+.tb11_3 { font-size:11px; line-height:115%; color:#ffffff }
+
+/* リンク色 */
+a:link,a:visited{ font-size:12px; color:#272D76; text-decoration:none }	
+a:active { color:#FF6600; text-decoration:none }	
+a:hover  { color:#FF6600; text-decoration:none }
+
+
+.co12_07 {  font-size: 12px; line-height: 180%; color: #003366}

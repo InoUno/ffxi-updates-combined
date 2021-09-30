@@ -1,0 +1,136 @@
+( function () {
+	var serverTimeObj = undefined;
+	// ===== server-yearの中身を置換する =====
+	var replaceSTimeYear = function ( year ) {
+		var sYearObj = document.body.getElementsByClassName( "__server-year__" );
+		var i = 0;
+		var l = sYearObj.length;
+		if ( l.length === 0 )
+			return;
+		for ( ; i < l; i++ ) {
+			sYearObj[ i ].innerHTML = year;
+		}
+	}
+	// ===== 字埋め ======
+	var padleft2 = function ( num ) {
+		if ( num < 10 ) {
+			return "0" + num.toString();
+		}
+		return num;
+	}
+	// ===== 日付文字列を変換 =====
+	var dateStrToTimeObj = function ( dateStr, timeDifference ) {
+		var timeObj = {};
+		var date = new Date( dateStr );
+		// 時差分を追加
+		date.setTime( date.getTime() + ( timeDifference * -1 ) * 3600000 );
+		timeObj.year = date.getUTCFullYear();
+		timeObj.month = date.getUTCMonth() + 1;
+		timeObj.day = date.getUTCDate();
+		timeObj.hour = date.getUTCHours();
+		timeObj.min = date.getUTCMinutes();
+		timeObj.time = Number( [
+			timeObj.year, 
+			padleft2( timeObj.month ),
+			padleft2( timeObj.day ),
+			timeObj.hour,
+			padleft2( timeObj.min )
+		].join( "" ) );
+		return timeObj;
+	}
+	// ===== GMTとの時差（時間）を返す =====
+	var getTimeDifference = function () {
+		return ( new Date() ).getTimezoneOffset() / 60;
+	}
+	// ===== 自分エレメントを返す =====
+	var getSelfObj = function () {
+		// すべてのスクリプトタグを得る
+		var elmObjs = document.getElementsByTagName( "script" );
+		// 末尾のscriptタグ＝自分を返す
+		return elmObjs[ elmObjs.length - 1 ];
+	}
+	// ===== 自分をAjaxで取得 =====
+	var getSelfByAjax = function () {
+		if ( serverTimeObj !== undefined ) {
+			window.onGetServerTime( serverTimeObj );
+			// __server-year__が指定されたDOMの中身を年で書き換える
+			replaceSTimeYear( serverTimeObj.year );
+			return;
+		}
+		// xhrIoインスタンスを生成
+		var xhrObj = ( function () {
+			if ( window.ActiveXObject ) {
+				try {
+					return new ActiveXObject( "Msxml2.XMLHTTP" );
+				}
+				catch ( e ) {
+					try {
+						return new ActiveXObject( "Microsoft.XMLHTTP" );
+					}
+					catch ( e ) {
+						return null;
+					}
+				}
+			}
+			else if ( window.XMLHttpRequest ) {
+				return new XMLHttpRequest();
+			}
+			else {
+				return null;
+			}
+		} )();
+		if ( xhrObj === null ) {
+			return;
+		}
+		xhrObj.onreadystatechange = function () {
+			try {
+				// 処理の完了
+				if ( Number( xhrObj.readyState ) === 4 ) {
+					// 正常終了
+					if ( Number( xhrObj.status ) === 200 ) {
+						var date = xhrObj.getResponseHeader( "date" );
+						// dateの取得に失敗した場合はローカルの時間を見る
+						if ( date === null ) {
+							date = new Date().toUTCString();
+						}
+						// 日付文字列の変換
+						serverTimeObj = dateStrToTimeObj( date, getTimeDifference() );
+						// サーバー時間ゲットをコールバック
+						window.onGetServerTime( serverTimeObj );
+						// __server-year__が指定されたDOMの中身を年で書き換える
+						replaceSTimeYear( serverTimeObj.year );
+					}
+					else {
+						// エラー
+					}
+					// 終了
+				}
+			} catch ( e ) {
+			}
+		}
+		var ua = navigator.userAgent.toLowerCase();
+		// IE or edgeの場合、ロードするファイルをキャッシュしない
+		if ( ua.match(/(msie|MSIE)/) || ua.match(/(T|t)rident/) || ua.indexOf( "edge" ) ) {
+			if ( selfSrc.indexOf( "?" ) > -1 ) {
+				selfSrc = selfSrc + "&d=";
+			} else {
+				selfSrc = selfSrc + "?d=";
+			}
+			selfSrc = selfSrc + new Date().getTime();
+		}
+		xhrObj.open( "GET", selfSrc );
+		xhrObj.send( selfSrc );
+	}
+	if ( window.getServerTime === undefined ) {
+		window.getServerTime = getSelfByAjax;
+		window.onGetServerTime = function () {};
+	}
+	// ===== 自身のスクリプトタグを得る =====
+	var selfObj = getSelfObj();
+	var selfSrc = selfObj.getAttribute( "src" );
+	// scriptタグを得る
+	// srcの末尾に?autoが指定されていた場合は自動取得
+	if ( selfSrc.indexOf( "?auto=1" ) > -1 ) {
+		getSelfByAjax();
+	}
+} )();

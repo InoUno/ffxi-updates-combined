@@ -1,0 +1,192 @@
+
+/* [STYLE]+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* [BODY/HEADER/FOOTER]---------------------------------------------- */
+body		{
+			margin:0px;
+			padding:0px;
+			background-image:url(general/bg01.gif);
+			}
+
+.header		{
+			background-image:url(general/header.jpg);
+			background-repeat:no-repeat;
+			background-position:0% 0%;
+			background-color:#ffffff;
+			width:610px;
+			}
+
+.header div	{
+			font-size:12px;
+			line-height:140%;
+			font-weight:bold;
+			color:#555555;
+			text-align:center;
+			padding:140px;
+			}
+
+.footer		{
+			background-image:url(general/footer.jpg);
+			background-repeat:no-repeat;
+			width:610px;
+			height:20px;
+			}
+
+.up			{
+			margin-left:282px;
+			margin-top:10px;
+			margin-bottom:10px;
+			width:46px;
+			height:18px;
+			}
+
+/* [TEXT]------------------------------------------------------------ */
+.con		{
+			margin-top:-130px;
+			background-color:#ffffff;
+			width:610px;
+			}
+
+/* [TEXT]見出し */
+h1			{
+			font-size:12px;
+			font-weight:bold;
+			color:#446699;
+			padding-left:15px;
+			margin-left:35px;
+			width:500px;
+			}
+
+/* [TEXT]■ICONアリ */
+p			{
+			background-image:url(general/ng01.gif);
+			background-repeat:no-repeat;
+			font-size:12px;
+			line-height:140%;
+			color:#555555;
+			padding-left:15px;
+			margin-left:50px;
+			width:500px;
+			clear:both;
+			}
+
+/* [TEXT]■ICONナシ */
+.p2			{
+			font-size:12px;
+			line-height:140%;
+			color:#555555;
+			margin-top:10px;
+			margin-left:50px;
+			margin-bottom:20px;
+			width:500px;
+			clear:both;
+			}
+
+/* [TEXT]BG COLOR */
+.p3			{
+			font-size:12px;
+			line-height:140%;
+			color:#555555;
+			margin-top:10px;
+			margin-left:50px;
+			margin-bottom:20px;
+			background-color:#f0f0f0;
+			padding:5px;
+			width:500px;
+			clear:both;
+			}
+
+/* [TEXT]個別指定用-------------------------------------------------- */
+.Tx12		{
+			font-size:12px;
+			line-height:140%;
+			color:#555555;
+			}
+
+.Tx12w		{
+			font-size:12px;
+			line-height:140%;
+			color:#ffffff;
+			}
+
+.Tx12r		{font-size:12px;
+			line-height:140%;
+			color:#E67504;
+			}
+
+.Tx12a		{font-size:12px;
+			line-height:140%;
+			color:#FF0000;
+			}
+
+/* [IMG]■ICONアリ--------------------------------------------------- */
+.imgdiv1	{
+			background-image:url(general/ng01.gif);
+			background-repeat:no-repeat;
+			font-size:12px;
+			line-height:140%;
+			color:#555555;
+			padding-left:15px;
+			margin-left:50px;
+			width:500px;
+			}
+
+/* [IMG]■ICONナシ */
+.imgdiv2	{
+			font-size:12px;
+			line-height:140%;
+			color:#555555;
+			margin-left:50px;
+			width:500px;
+			}
+
+/* [IMG]■ICONナシ→15px */
+.imgdiv3	{
+			font-size:12px;
+			line-height:140%;
+			color:#555555;
+			padding-left:15px;
+			margin-left:50px;
+			width:500px;
+			}
+
+/* [IMG]RIGHT */
+.imgr		{
+			float:right;
+			margin-left:10px;
+			}
+
+/* [IMG]LEFT */
+.imgl		{
+			float:left;
+			margin-left:10px;
+			}
+
+/* [TABLE]----------------------------------------------------------- */
+.Ta1		{
+			margin-left:60px;
+			width:500px;
+			}
+
+.Ta2		{
+			margin-left:45px;
+			width:500px;
+			}
+
+/* [LINK COLOR]------------------------------------------------------ */
+a:link,a:visited
+			{
+			font-size:12px;
+			color:#272D76;
+			text-decoration:underline;
+			}
+
+a:active	{
+			color:#FF0000;
+			text-decoration:none
+			}
+
+a:hover		{
+			color:#FF0000;
+			text-decoration:none
+			}

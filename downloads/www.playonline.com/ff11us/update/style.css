@@ -1,0 +1,247 @@
+
+/* [FFXI UPDATE STYLE 05/06/16]++++++++++++++++++++++++++++++++++++++ */
+
+/* [BODY/HEADER/FOOTER]---------------------------------------------- */
+
+body		{
+			background-image:url(general/bg01.gif);
+			padding:0px;
+			margin:0px;
+			scrollbar-arrow-color: #888888;
+			scrollbar-face-color: #dddddd;
+			scrollbar-track-color: #EBF1F7;
+			scrollbar-highlight-color: #ffffff;
+			scrollbar-shadow-color: #aaaaaa;
+			scrollbar-3dlight-color: #cccccc;
+			scrollbar-darkshadow-color: #ffffff;
+			}
+
+#header		{
+			background-image:url(general/header.jpg);
+			background-repeat:no-repeat;
+			background-color:#ffffff;
+			padding:0px 0px 20px 0px;
+			margin:0px;
+			width:610px;
+			height:164px;
+			}
+
+#header div	{
+			padding-top:140px;
+			margin:0px;
+			font-size:12px;
+			line-height:140%;
+			font-weight:bold;
+			color:#555555;
+			width:610px;
+			text-align:center;
+			}
+
+#footer		{
+			background-image:url(general/footer.jpg);
+			background-repeat:no-repeat;
+			padding:0px;
+			margin:0px;
+			width:610px;
+			height:50px;
+			text-align:center;
+			}
+
+/* footer_botton */
+
+#footerbt	{
+			padding-top:20px;
+			margin:0px auto;
+			width:46px;
+			}
+
+/* [CONTENT AREA]---------------------------------------------------- */
+
+#contbg		{
+			background-color:#ffffff;
+			margin:0px;
+			padding:0px;
+			width:610px;
+			}
+
+#cont		{
+			margin:0px 50px 0px 50px;
+			padding:0px;
+			width:510px;
+			}
+
+/* 余白調整用（FireFox対応） */
+
+.adjust		{
+			padding:0px;
+			margin:0px;
+			font-size:1px;
+			width:1px;
+			height:10px;
+			}
+
+/* float解除（FireFox対応） */
+
+.floatEnd	{
+			clear:both;
+			}
+
+/* 罫線用スタイル */
+
+.hline1		{
+			padding:0px;
+			margin:30px 0px 32px 0px;
+			}
+
+.hline2		{
+			padding:0px;
+			margin:0px 0px 23px 0px;
+			}
+
+/* [TEXT]------------------------------------------------------------ */
+
+/* [TEXT]見出し */
+
+h1			{
+			padding:20px 0px 15px 0px;
+			margin:0px;
+			font-size:12px;
+			font-weight:bold;
+			color:#446699;
+			}
+
+h2			{
+			padding:20px 0px 15px 0px;
+			margin:0px;
+			font-size:12px;
+			font-weight:bold;
+			color:#555555;
+			}
+
+/* [TEXT]■ICONアリ */
+
+.tx1		{
+			background-image:url(general/ng01.gif);
+			background-repeat:no-repeat;
+			padding-left:15px;
+			margin:0px 0px 24px 0px;
+			font-size:12px;
+			line-height:140%;
+			color:#555555;
+			}
+
+/* [TEXT]■ICONナシ インデントアリ */
+
+.tx2		{
+			padding-left:15px;
+			margin:0px 0px 24px 0px;
+			font-size:12px;
+			line-height:140%;
+			color:#555555;
+			}
+
+/* [TEXT]■ICONナシ インデントナシ */
+
+.tx3		{
+			padding-left:0px;
+			margin:0px 0px 24px 0px;
+			font-size:12px;
+			line-height:140%;
+			color:#555555;
+			}
+
+/* [TEXT]※注釈色 */
+
+.co1		{
+			font-size:12px;
+			line-height:140%;
+			color:#E67504;
+			}
+
+/* [TEXT]※強調色 */
+
+.co2		{
+			font-size:12px;
+			line-height:140%;
+			color:#FF0000;
+			}
+
+/* [TEXT]※サイズ小 */
+
+.co3		{
+			font-size:11px;
+			line-height:100%;
+			color:#FFFFFF;
+			}
+
+/* [IMG]CENTER ※divで中央に配置 */
+
+.imgc		{
+			margin:0px 0px 24px 0px;
+			text-align:center;
+			}
+
+/* [IMG]------------------------------------------------------------- */
+
+/* [IMG]RIGHT */
+
+.imgr		{
+			float:right;
+			margin:0px 1px 12px 12px;
+			}
+
+/* [IMG]LEFT */
+
+.imgl		{
+			float:left;
+			margin:0px 12px 12px 1px;
+			}
+
+/* [TABLE]----------------------------------------------------------- */
+
+/* [TABLE]インデントアリ */
+.ta1		{
+			margin:0px 0px 24px 15px;
+			font-size:12px;
+			line-height:140%;
+			width:490px;
+			}
+
+/* [TABLE]インデントナシ */
+.ta2		{
+			margin:0px 0px 24px 0px;
+			font-size:12px;
+			line-height:140%;
+			width:500px;
+			}
+
+.td1		{
+			font-size:12px;
+			line-height:140%;
+			color:#ffffff;
+			}
+
+.td2		{
+			font-size:12px;
+			line-height:140%;
+			color:#555555;
+			}
+
+/* [LINK]------------------------------------------------------------ */
+
+a:link,a:visited
+			{
+			font-size:12px;
+			color:#272D76;
+			text-decoration:underline;
+			}
+
+a:active	{
+			color:#FF0000;
+			text-decoration:none
+			}
+
+a:hover		{
+			color:#FF0000;
+			text-decoration:none
+			}
